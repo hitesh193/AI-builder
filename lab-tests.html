@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Lab Tests & Health Checkups at Home | Medroute</title>
+  <meta name="description" content="Book diagnostic blood tests & full body checkup packages at home with Medroute. 100% NABL-certified labs (Thyrocare, Metropolis, Lal PathLabs). Fast digital reports.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            medblue: '#1b3b6f',
+            mednavy: '#0f2444',
+            medteal: '#00A389',
+            medtealDark: '#007d69',
+            medelectric: '#0066dc',
+            medgold: '#f59e0b'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-medblue to-medteal flex items-center justify-center text-white text-2xl shadow-md">
+            🩺
+          </div>
+          <div>
+            <div class="text-2xl font-black tracking-tight text-medblue leading-none">
+              Med<span class="text-medteal">route</span>
+            </div>
+            <div class="text-2xs font-extrabold uppercase tracking-widest text-slate-400 mt-0.5">Lab Diagnostics</div>
+          </div>
+        </a>
+
+        <div class="flex-1 max-w-xl mx-2 hidden sm:block">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 text-sm">🔍</span>
+            <input type="text" placeholder="Search lab packages, blood tests, thyroid, vitamin D..." class="universal-search-input w-full pl-10 pr-4 py-2.5 bg-slate-100/80 focus:bg-white text-xs font-medium rounded-full border border-slate-200 focus:outline-none focus:ring-2 focus:ring-medteal transition" />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 shrink-0">
+          <div class="gold-status-indicator hidden sm:block"></div>
+          <a href="#" class="open-cart-btn relative p-2.5 rounded-full hover:bg-slate-100 text-slate-700 transition" title="Open Cart">
+            <span class="text-xl">🛒</span>
+            <span class="cart-badge absolute top-1 right-1 w-5 h-5 rounded-full bg-medteal text-white text-2xs font-bold flex items-center justify-center hidden">0</span>
+          </a>
+          <a href="dashboard.html" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold transition">
+            View Reports
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Secondary Services Navbar -->
+      <nav class="flex items-center justify-between py-2.5 border-t border-slate-100 text-xs font-bold text-slate-600 overflow-x-auto gap-4">
+        <a href="consult.html" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap">
+          <span>👨‍⚕️</span> Doctor Video Consult
+        </a>
+        <a href="lab-tests.html" class="flex items-center gap-1.5 text-medteal border-b-2 border-medteal pb-1 whitespace-nowrap">
+          <span>🧪</span> Lab Tests & Health Checkups
+        </a>
+        <a href="pharmacy.html" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap">
+          <span>💊</span> Medicines & Pharmacy
+        </a>
+        <a href="surgeries.html" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap">
+          <span>🏥</span> Surgery Care & Care Buddy
+        </a>
+        <a href="gold.html" class="flex items-center gap-1.5 text-amber-700 hover:text-amber-800 transition whitespace-nowrap">
+          <span>✨</span> Medroute Gold
+        </a>
+        <button onclick="aiChecker.open()" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap cursor-pointer">
+          <span>🤖</span> Ask AI Assistant
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Lab Hero Banner -->
+  <section class="bg-gradient-to-r from-emerald-800 via-teal-800 to-slate-900 text-white py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-emerald-300 text-xs font-bold border border-white/15">
+            <span>🔬</span> 100% NABL & CAP Certified Partner Labs
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-black tracking-tight">
+            Comprehensive Health Checkups & <span class="text-emerald-300">Home Sample Collection</span>
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-200 max-w-xl">
+            Trained phlebotomists follow hygienic 6-step cold-chain protocols. Receive verified digital reports on your Medroute dashboard within 12-15 hours.
+          </p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-xs space-y-2 shrink-0">
+          <div class="flex items-center gap-2 text-emerald-300 font-bold">
+            <span>✓</span> Zero Sample Collection Charges
+          </div>
+          <div class="flex items-center gap-2 text-emerald-300 font-bold">
+            <span>✓</span> Smart Barcode Traceability
+          </div>
+          <div class="flex items-center gap-2 text-emerald-300 font-bold">
+            <span>✓</span> Free Doctor Report Review with Gold
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Health Packages Catalog -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 space-y-12">
+    
+    <!-- Packages Section -->
+    <div>
+      <div class="flex items-end justify-between mb-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-medteal">Full Body Screen</span>
+          <h2 class="text-2xl font-black text-slate-900 mt-1">Recommended Preventive Health Packages</h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="packages-list">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- Individual Common Tests Section -->
+    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+      <div class="flex items-end justify-between mb-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-medteal">Individual Tests</span>
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-1">Book Routine Diagnostic Blood Tests</h2>
+          <p class="text-xs text-slate-500 mt-0.5">Quick booking for individual blood parameters prescribed by your physician.</p>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" id="individual-tests-grid">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Test Parameters Inclusions Modal -->
+  <div id="test-inclusions-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs hidden">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-xl w-full overflow-hidden animate-slide-down border border-slate-100">
+      <div class="bg-slate-900 p-5 text-white flex items-center justify-between">
+        <div>
+          <h3 class="font-bold text-base" id="modal-pkg-name">Package Test Parameters</h3>
+          <p class="text-xs text-emerald-400" id="modal-pkg-tests-count">86 Tests Included</p>
+        </div>
+        <button onclick="closeInclusionsModal()" class="text-white/80 hover:text-white text-2xl font-bold">✕</button>
+      </div>
+
+      <div class="p-6 max-h-[70vh] overflow-y-auto space-y-4 text-xs">
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-600 space-y-1">
+          <div>🧪 <strong>Specimen:</strong> <span id="modal-sample-type">Blood & Urine</span></div>
+          <div>🍽️ <strong>Preparation:</strong> <span id="modal-fasting-type">10-12 hours overnight fasting</span></div>
+          <div>⏱️ <strong>Report Delivery:</strong> <span id="modal-report-time">Within 15 hours</span></div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-2">Included Test Profiles & Biomarkers:</h4>
+          <ul id="modal-parameters-list" class="space-y-2 divide-y divide-slate-100">
+            <!-- Parameters -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+        <div>
+          <span class="text-xs text-slate-400">Total Price:</span>
+          <span id="modal-pkg-price" class="text-base font-black text-slate-900 ml-1">₹1,399</span>
+        </div>
+        <button id="modal-add-cart-btn" class="px-5 py-2.5 bg-medteal hover:bg-medtealDark text-white font-bold text-xs rounded-xl shadow-sm transition">
+          Add Package to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs mt-auto py-8 border-t border-slate-800 text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      © 2026 Medroute Technologies Pvt Ltd • NABL Certified Diagnostic Partners
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ai-checker.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPackages();
+      renderIndividualTests();
+    });
+
+    function renderPackages() {
+      const container = document.getElementById('packages-list');
+      const isGold = store.state.user.isGoldMember;
+
+      container.innerHTML = MEDROUTE_DATA.labPackages.map(pkg => `
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition hover-lift flex flex-col justify-between" id="${pkg.id}">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-2xs font-extrabold uppercase px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 tracking-wider">${pkg.badge}</span>
+              <span class="text-2xs font-bold text-slate-400">${pkg.testsCount} Tests</span>
+            </div>
+
+            <h3 class="text-base font-bold text-slate-900 mt-3">${pkg.name}</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2">${pkg.desc}</p>
+            
+            <div class="mt-4 p-3 bg-slate-50 rounded-xl space-y-1 text-2xs text-slate-600">
+              <div>🧪 <strong>Fast:</strong> ${pkg.fasting}</div>
+              <div>⚡ <strong>Report:</strong> ${pkg.reportTime}</div>
+              <div>🏢 <strong>Partner:</strong> ${pkg.partnerLab}</div>
+            </div>
+
+            <button onclick="openInclusionsModal('${pkg.id}')" class="text-xs font-bold text-medteal hover:underline mt-3 inline-block">
+              View all ${pkg.testsCount} test parameters →
+            </button>
+          </div>
+
+          <div class="pt-5 border-t border-slate-100 mt-5 flex items-center justify-between">
+            <div>
+              <span class="text-xs line-through text-slate-400">₹${pkg.mrp}</span>
+              <div class="text-xl font-black text-slate-900">₹${isGold ? pkg.goldPrice : pkg.price}</div>
+              <span class="text-2xs text-amber-700 font-bold">${isGold ? 'Gold Member Price' : '₹' + pkg.goldPrice + ' with Gold'}</span>
+            </div>
+            <button onclick="store.addToCart(MEDROUTE_DATA.labPackages.find(p => p.id === '${pkg.id}'))" class="px-4 py-2 bg-medteal hover:bg-medtealDark text-white font-bold text-xs rounded-xl shadow-sm transition">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderIndividualTests() {
+      const container = document.getElementById('individual-tests-grid');
+      container.innerHTML = MEDROUTE_DATA.individualTests.map(t => `
+        <div class="p-4 rounded-2xl border border-slate-200 hover:border-medteal transition hover-lift flex flex-col justify-between bg-slate-50/50 hover:bg-white">
+          <div>
+            <div class="text-2xs text-slate-400 uppercase font-bold tracking-wider">${t.sample} • ${t.fasting}</div>
+            <h4 class="text-xs font-bold text-slate-900 mt-1">${t.name}</h4>
+            <div class="text-2xs text-emerald-600 font-semibold mt-1">Turnaround: ${t.turnaround}</div>
+          </div>
+          <div class="pt-3 border-t border-slate-100 mt-3 flex items-center justify-between">
+            <div>
+              <span class="text-2xs line-through text-slate-400">₹${t.mrp}</span>
+              <div class="text-sm font-black text-slate-900">₹${t.price}</div>
+            </div>
+            <button onclick="store.addToCart({ id: '${t.id}', type: 'test', name: '${t.name}', price: ${t.price}, qty: 1 })" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-2xs font-bold transition">
+              + Add
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openInclusionsModal(pkgId) {
+      const pkg = MEDROUTE_DATA.labPackages.find(p => p.id === pkgId);
+      if (!pkg) return;
+
+      document.getElementById('modal-pkg-name').textContent = pkg.name;
+      document.getElementById('modal-pkg-tests-count').textContent = `${pkg.testsCount} Biomarkers Included • ${pkg.partnerLab}`;
+      document.getElementById('modal-sample-type').textContent = pkg.sampleType;
+      document.getElementById('modal-fasting-type').textContent = pkg.fasting;
+      document.getElementById('modal-report-time').textContent = pkg.reportTime;
+      document.getElementById('modal-pkg-price').textContent = `₹${store.state.user.isGoldMember ? pkg.goldPrice : pkg.price}`;
+
+      const paramsList = document.getElementById('modal-parameters-list');
+      paramsList.innerHTML = pkg.parameters.map((param, i) => `
+        <li class="pt-2 flex items-start gap-2 text-slate-700">
+          <span class="text-medteal font-bold">✓</span>
+          <span>${param}</span>
+        </li>
+      `).join('');
+
+      const addBtn = document.getElementById('modal-add-cart-btn');
+      addBtn.onclick = () => {
+        store.addToCart(pkg);
+        closeInclusionsModal();
+      };
+
+      document.getElementById('test-inclusions-modal').classList.remove('hidden');
+    }
+
+    function closeInclusionsModal() {
+      document.getElementById('test-inclusions-modal').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>

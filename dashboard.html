@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Dashboard & Health Records | Punjab Healthcare</title>
+  <meta name="description" content="View your active doctor video appointments and health records on your Punjab Healthcare dashboard.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            medblue: '#1b3b6f',
+            mednavy: '#0f2444',
+            medteal: '#00A389',
+            medtealDark: '#007d69',
+            medelectric: '#0066dc',
+            medgold: '#f59e0b'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-medblue to-medteal flex items-center justify-center text-white text-2xl shadow-md">
+            🩺
+          </div>
+          <div>
+            <div class="text-2xl font-black tracking-tight text-medblue leading-none">
+              Punjab <span class="text-medteal">Healthcare</span>
+            </div>
+            <div class="text-2xs font-extrabold uppercase tracking-widest text-slate-400 mt-0.5">Health Dashboard</div>
+          </div>
+        </a>
+
+        <div class="flex items-center gap-3 shrink-0 ml-auto">
+          <a href="consult.html" class="px-4 py-2 bg-medteal hover:bg-medtealDark text-white text-xs font-bold rounded-xl shadow-xs transition">
+            + Book Appointment
+          </a>
+          <a href="#" class="open-cart-btn relative p-2.5 rounded-full hover:bg-slate-100 text-slate-700 transition" title="Open Cart">
+            <span class="text-xl">🛒</span>
+            <span class="cart-badge absolute top-1 right-1 w-5 h-5 rounded-full bg-medteal text-white text-2xs font-bold flex items-center justify-center hidden">0</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Secondary Services Navbar -->
+      <nav class="flex items-center justify-start py-2.5 border-t border-slate-100 text-xs font-bold text-slate-600 overflow-x-auto gap-8">
+        <a href="consult.html" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap">
+          <span>📞</span> Hospital Contact Numbers
+        </a>
+        <a href="surgeries.html" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap">
+          <span>🏥</span> Surgery Care & Care Buddy
+        </a>
+        <button onclick="aiChecker.open()" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap cursor-pointer">
+          <span>🤖</span> Ask AI Assistant
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- User Profile Header Section -->
+  <section class="bg-gradient-to-r from-mednavy via-medblue to-slate-900 text-white py-8 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-4">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" class="w-16 h-16 rounded-2xl object-cover border-2 border-white/30 shadow-md" />
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-xl font-black text-white" id="user-name-display">Arun Kumar</h1>
+              <span id="user-gold-pill" class="text-2xs font-extrabold px-2.5 py-0.5 rounded-full bg-slate-700 text-slate-300">Standard User</span>
+            </div>
+            <div class="text-xs text-slate-300 mt-0.5">📞 +91 98450 12345 • arun.kumar@example.com</div>
+            <div class="text-2xs text-emerald-400 mt-1 font-semibold">Corporate Health Card: Active (Medi Assist TPA)</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 text-right">
+            <span class="text-2xs text-slate-300 block font-medium">Corporate Wallet:</span>
+            <span class="text-lg font-black text-white">₹12,500</span>
+          </div>
+          <a href="gold.html" class="px-4 py-3 bg-amber-400 hover:bg-amber-500 text-amber-950 rounded-2xl text-xs font-black shadow-md transition">
+            Upgrade to Gold
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Tabs Navigation -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 space-y-8 no-print">
+    
+    <!-- Tab Buttons -->
+    <div class="flex items-center gap-2 border-b border-slate-200 pb-3 text-xs overflow-x-auto">
+      <button onclick="switchTab('appointments')" class="dash-tab px-4 py-2 font-bold rounded-xl bg-slate-900 text-white shadow-xs whitespace-nowrap" data-tab="appointments">
+        📅 Appointments (<span id="appt-count">1</span>)
+      </button>
+      <button onclick="switchTab('orders')" class="dash-tab px-4 py-2 font-medium rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap" data-tab="orders">
+        📦 Orders & Delivery (<span id="order-count">1</span>)
+      </button>
+      <button onclick="switchTab('reports')" class="dash-tab px-4 py-2 font-medium rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap" data-tab="reports">
+        📄 Digital Lab Reports (2)
+      </button>
+      <button onclick="switchTab('records')" class="dash-tab px-4 py-2 font-medium rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap" data-tab="records">
+        📁 Prescriptions & Records
+      </button>
+    </div>
+
+    <!-- TAB 1: Appointments -->
+    <div id="tab-appointments" class="space-y-4">
+      <div id="appointments-container" class="space-y-4">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- TAB 2: Orders -->
+    <div id="tab-orders" class="space-y-4 hidden">
+      <div id="orders-container" class="space-y-4">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- TAB 3: Digital Lab Reports -->
+    <div id="tab-reports" class="space-y-6 hidden">
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- Report 1 -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+            <div>
+              <span class="text-2xs font-extrabold uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Verified by NABL</span>
+              <h3 class="text-sm font-bold text-slate-900 mt-2">Comprehensive Full Body Screen</h3>
+              <p class="text-2xs text-slate-400">Specimen Collected: 22 Sep 2026 • Thyrocare Central Lab</p>
+            </div>
+            <button onclick="viewPrintableReport('fullbody')" class="px-3 py-1.5 bg-medteal hover:bg-medtealDark text-white text-xs font-bold rounded-xl transition">
+              Preview / Print
+            </button>
+          </div>
+          <div class="py-3 text-xs text-slate-600 space-y-1">
+            <div>• <strong>HbA1c:</strong> 5.6% (Normal / Non-diabetic)</div>
+            <div>• <strong>Total Cholesterol:</strong> 188 mg/dL (Desirable)</div>
+            <div>• <strong>TSH:</strong> 2.45 µIU/mL (Normal)</div>
+            <div>• <strong>Vitamin D (25-OH):</strong> 34.2 ng/mL (Sufficient)</div>
+          </div>
+        </div>
+
+        <!-- Report 2 -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+            <div>
+              <span class="text-2xs font-extrabold uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Verified by NABL</span>
+              <h3 class="text-sm font-bold text-slate-900 mt-2">Complete Hemogram (CBC - 24 Parameters)</h3>
+              <p class="text-2xs text-slate-400">Specimen Collected: 15 Sep 2026 • Metropolis Healthcare</p>
+            </div>
+            <button onclick="viewPrintableReport('cbc')" class="px-3 py-1.5 bg-medteal hover:bg-medtealDark text-white text-xs font-bold rounded-xl transition">
+              Preview / Print
+            </button>
+          </div>
+          <div class="py-3 text-xs text-slate-600 space-y-1">
+            <div>• <strong>Hemoglobin:</strong> 14.8 g/dL (Normal Range: 13.0 - 17.0)</div>
+            <div>• <strong>Total WBC Count:</strong> 7,200 /cu.mm (Normal)</div>
+            <div>• <strong>Platelet Count:</strong> 2.85 Lakhs /cu.mm (Normal)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 4: Prescriptions -->
+    <div id="tab-records" class="space-y-4 hidden">
+      <div class="bg-white rounded-3xl p-6 border border-slate-200 text-xs space-y-4">
+        <div class="flex justify-between items-center">
+          <h3 class="font-bold text-slate-800 text-sm">Uploaded Medical Prescriptions & Documents</h3>
+          <button onclick="store.showToast('Select document to upload to encrypted cloud storage.', 'info')" class="px-3 py-1.5 bg-slate-900 text-white rounded-lg font-bold text-xs">
+            + Upload New Document
+          </button>
+        </div>
+        <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <span class="text-xl">📄</span>
+            <div>
+              <div class="font-bold text-slate-800">Dr_Rajesh_Sharma_Prescription_Sep2026.pdf</div>
+              <div class="text-2xs text-slate-400">Uploaded 22 Sep 2026 • Telma 40mg, Pan-D 40mg</div>
+            </div>
+          </div>
+          <span class="text-2xs text-emerald-600 font-bold bg-emerald-50 px-2 py-1 rounded">Verified</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Printable Authentic Digital Lab Report (Opens for preview / printing) -->
+  <div id="printable-report" class="hidden bg-white max-w-3xl mx-auto my-6 p-8 border border-slate-300 rounded-2xl shadow-xl text-slate-800 font-sans">
+    <div class="flex justify-between items-start border-b-2 border-slate-900 pb-4">
+      <div>
+        <h2 class="text-2xl font-black text-slate-900 tracking-tight">Medroute Diagnostic Reference Lab</h2>
+        <p class="text-xs text-slate-500">In Partnership with Thyrocare Technologies Ltd • NABL ISO 15189 Certified</p>
+        <p class="text-2xs text-slate-400">Accreditation No: MC-2109 • CAP Certified Lab No: 719201</p>
+      </div>
+      <div class="text-right text-xs">
+        <div class="font-black text-slate-900 text-sm">CONFIDENTIAL MEDICAL REPORT</div>
+        <div class="text-slate-500">Barcode: <strong>THY-9821-IN</strong></div>
+      </div>
+    </div>
+
+    <!-- Patient Details Grid -->
+    <div class="grid grid-cols-3 gap-4 py-4 border-b border-slate-200 text-xs">
+      <div>
+        <span class="text-slate-400 block font-semibold">PATIENT NAME:</span>
+        <strong class="text-slate-900 text-sm">Mr. Arun Kumar</strong>
+      </div>
+      <div>
+        <span class="text-slate-400 block font-semibold">AGE / GENDER:</span>
+        <strong>36 Yrs / Male</strong>
+      </div>
+      <div>
+        <span class="text-slate-400 block font-semibold">REFERRED BY:</span>
+        <strong>Dr. Rajesh Sharma, MD</strong>
+      </div>
+      <div>
+        <span class="text-slate-400 block font-semibold">COLLECTION DATE:</span>
+        <strong>22-Sep-2026, 07:30 AM</strong>
+      </div>
+      <div>
+        <span class="text-slate-400 block font-semibold">REPORT DATE:</span>
+        <strong>22-Sep-2026, 04:15 PM</strong>
+      </div>
+      <div>
+        <span class="text-slate-400 block font-semibold">SAMPLE TYPE:</span>
+        <strong>Fluoride Plasma & Serum</strong>
+      </div>
+    </div>
+
+    <!-- Test Parameters Table -->
+    <div class="py-6">
+      <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">BIOCHEMISTRY & ENDOCRINOLOGY PANEL</h3>
+      <table class="w-full text-xs text-left">
+        <thead>
+          <tr class="border-b border-slate-300 text-slate-500">
+            <th class="py-2">Test Investigation</th>
+            <th class="py-2">Observed Value</th>
+            <th class="py-2">Biological Reference Interval</th>
+            <th class="py-2">Unit</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 font-medium">
+          <tr>
+            <td class="py-2 font-bold text-slate-900">HbA1c (Glycosylated Hemoglobin)</td>
+            <td class="py-2 text-emerald-700 font-black">5.6</td>
+            <td class="py-2 text-slate-500">&lt; 5.7: Normal<br>5.7 - 6.4: Pre-diabetic<br>&ge; 6.5: Diabetic</td>
+            <td class="py-2">%</td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-slate-900">Estimated Average Glucose (eAG)</td>
+            <td class="py-2 font-bold text-slate-800">114</td>
+            <td class="py-2 text-slate-500">90 - 120</td>
+            <td class="py-2">mg/dL</td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-slate-900">Total Cholesterol</td>
+            <td class="py-2 font-bold text-slate-800">188</td>
+            <td class="py-2 text-slate-500">&lt; 200: Desirable</td>
+            <td class="py-2">mg/dL</td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-slate-900">Triglycerides</td>
+            <td class="py-2 font-bold text-slate-800">142</td>
+            <td class="py-2 text-slate-500">&lt; 150: Normal</td>
+            <td class="py-2">mg/dL</td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-slate-900">HDL (Good) Cholesterol</td>
+            <td class="py-2 font-bold text-slate-800">46</td>
+            <td class="py-2 text-slate-500">&gt; 40</td>
+            <td class="py-2">mg/dL</td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-slate-900">TSH - Ultrasensitive</td>
+            <td class="py-2 font-bold text-slate-800">2.45</td>
+            <td class="py-2 text-slate-500">0.35 - 4.94</td>
+            <td class="py-2">µIU/mL</td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-slate-900">25-OH Vitamin D Total</td>
+            <td class="py-2 font-bold text-slate-800">34.2</td>
+            <td class="py-2 text-slate-500">30 - 100: Sufficient</td>
+            <td class="py-2">ng/mL</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Sign-off -->
+    <div class="pt-8 border-t border-slate-300 flex justify-between items-end text-xs">
+      <div>
+        <p class="text-2xs text-slate-400">Clinical Interpretation: All tested parameters are within physiological reference intervals.</p>
+        <p class="text-2xs text-slate-400 mt-0.5">Scanned with automated Roche Cobas 8000 analyzer series.</p>
+      </div>
+      <div class="text-center">
+        <div class="font-serif italic text-slate-600 mb-1">Dr. K. S. Mukherjee</div>
+        <strong class="text-slate-900 block">Dr. K. S. Mukherjee, MD (Biochemistry)</strong>
+        <span class="text-2xs text-slate-500">Chief Consultant Pathologist • MMC-49120</span>
+      </div>
+    </div>
+
+    <div class="mt-6 pt-4 border-t border-slate-200 text-center no-print">
+      <button onclick="window.print()" class="px-5 py-2 bg-slate-900 text-white font-bold text-xs rounded-xl shadow-sm hover:bg-slate-800 transition">
+        🖨️ Print / Save PDF
+      </button>
+      <button onclick="document.getElementById('printable-report').classList.add('hidden')" class="px-5 py-2 bg-slate-200 text-slate-700 font-bold text-xs rounded-xl ml-2 hover:bg-slate-300 transition">
+        Close Preview
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs mt-auto py-8 border-t border-slate-800 text-center no-print">
+    <div class="max-w-7xl mx-auto px-4">
+      © 2026 Medroute Technologies Pvt Ltd • Encrypted Patient Health Records (PHR)
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/punjab_hospital_data.js"></script>
+  <script src="js/ai-checker.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      syncDashboard();
+    });
+
+    function syncDashboard() {
+      const state = store.state;
+      const user = state.user;
+
+      document.getElementById('user-name-display').textContent = user.name;
+      const goldPill = document.getElementById('user-gold-pill');
+      if (user.isGoldMember) {
+        goldPill.className = 'text-2xs font-extrabold px-2.5 py-0.5 rounded-full bg-amber-400 text-amber-950';
+        goldPill.textContent = '★ Medroute Gold Active';
+      }
+
+      // Render Appointments
+      const apptContainer = document.getElementById('appointments-container');
+      document.getElementById('appt-count').textContent = state.bookings.length;
+
+      if (state.bookings.length === 0) {
+        apptContainer.innerHTML = '<div class="p-8 text-center text-slate-400 bg-white rounded-3xl border border-slate-200">No active doctor appointments. <a href="consult.html" class="text-medteal font-bold hover:underline">Book consultation →</a></div>';
+      } else {
+        apptContainer.innerHTML = state.bookings.map(b => `
+          <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-teal-50 text-medteal flex items-center justify-center text-2xl font-bold shrink-0">
+                👨‍⚕️
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-base font-bold text-slate-900">${b.doctorName}</h3>
+                  <span class="text-2xs font-extrabold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">${b.status}</span>
+                </div>
+                <div class="text-xs text-medteal font-semibold mt-0.5">${b.specialty} • ${b.type}</div>
+                <div class="text-xs text-slate-500 mt-1">🗓️ ${b.date} at ${b.time}</div>
+                <div class="text-2xs text-slate-400 mt-1">Notes: ${b.symptoms}</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="startInstantVideoConsult('${b.doctorName}', '${b.specialty}')" class="px-5 py-2.5 bg-medteal hover:bg-medtealDark text-white font-bold text-xs rounded-xl shadow-xs transition flex items-center gap-2">
+                <span>📹 Join Video Room</span>
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Render Orders
+      const orderContainer = document.getElementById('orders-container');
+      document.getElementById('order-count').textContent = state.orders.length;
+
+      if (state.orders.length === 0) {
+        orderContainer.innerHTML = '<div class="p-8 text-center text-slate-400 bg-white rounded-3xl border border-slate-200">No active orders.</div>';
+      } else {
+        orderContainer.innerHTML = state.orders.map(o => `
+          <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-bold text-slate-900 text-sm">Order #${o.id}</span>
+                <span class="text-2xs font-extrabold bg-sky-100 text-sky-800 px-2 py-0.5 rounded-full">${o.status}</span>
+              </div>
+              <div class="text-xs text-slate-600 mt-1">📦 Items: ${o.items.join(', ')}</div>
+              <div class="text-2xs text-slate-400 mt-1">📍 ${o.address} • Delivery: ${o.expected}</div>
+            </div>
+            <div class="text-right">
+              <div class="text-base font-black text-slate-900">₹${o.total}</div>
+              <span class="text-2xs text-emerald-600 font-bold">Paid Cashless</span>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.dash-tab').forEach(b => {
+        if (b.getAttribute('data-tab') === tabId) {
+          b.className = 'dash-tab px-4 py-2 font-bold rounded-xl bg-slate-900 text-white shadow-xs whitespace-nowrap';
+        } else {
+          b.className = 'dash-tab px-4 py-2 font-medium rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap';
+        }
+      });
+
+      ['appointments', 'orders', 'reports', 'records'].forEach(t => {
+        document.getElementById(`tab-${t}`).classList.toggle('hidden', t !== tabId);
+      });
+    }
+
+    function viewPrintableReport(type) {
+      const rep = document.getElementById('printable-report');
+      rep.classList.remove('hidden');
+      rep.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

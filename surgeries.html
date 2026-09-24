@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surgery Care & Care Buddy | Punjab Healthcare - 100% Cashless Elective Surgeries</title>
+  <meta name="description" content="Hassle-free surgery care with Punjab Healthcare. 50+ elective surgeries, dedicated personal Care Buddy, 100% cashless insurance coverage, zero-cost EMI, and free second opinions.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            medblue: '#1b3b6f',
+            mednavy: '#0f2444',
+            medteal: '#00A389',
+            medtealDark: '#007d69',
+            medelectric: '#0066dc',
+            medgold: '#f59e0b'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-medblue to-medteal flex items-center justify-center text-white text-2xl shadow-md">
+            🩺
+          </div>
+          <div>
+            <div class="text-2xl font-black tracking-tight text-medblue leading-none">
+              Punjab <span class="text-medteal">Healthcare</span>
+            </div>
+            <div class="text-2xs font-extrabold uppercase tracking-widest text-slate-400 mt-0.5">Surgery Care</div>
+          </div>
+        </a>
+
+        <div class="flex-1 max-w-xl mx-2 hidden sm:block">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 text-sm">🔍</span>
+            <input type="text" placeholder="Search surgeries: Cataract, Hernia, Gallbladder, Knee..." class="universal-search-input w-full pl-10 pr-4 py-2.5 bg-slate-100/80 focus:bg-white text-xs font-medium rounded-full border border-slate-200 focus:outline-none focus:ring-2 focus:ring-medteal transition" />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 shrink-0">
+          <button onclick="openSurgeryCallbackModal('General Surgical Inquiry')" class="px-4 py-2 bg-medteal hover:bg-medtealDark text-white rounded-xl text-xs font-bold shadow-sm transition">
+            Book Free Second Opinion
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Secondary Services Navbar -->
+      <nav class="flex items-center justify-start py-2.5 border-t border-slate-100 text-xs font-bold text-slate-600 overflow-x-auto gap-8">
+        <a href="consult.html" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap">
+          <span>📞</span> Hospital Contact Numbers
+        </a>
+        <a href="surgeries.html" class="flex items-center gap-1.5 text-medteal border-b-2 border-medteal pb-1 whitespace-nowrap">
+          <span>🏥</span> Surgery Care & Care Buddy
+        </a>
+        <button onclick="aiChecker.open()" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap cursor-pointer">
+          <span>🤖</span> Ask AI Assistant
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-mednavy via-medblue to-slate-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-medteal text-xs font-bold border border-white/15">
+            <span>🤝</span> Dedicated Personal Concierge Included
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+            Seamless Surgery Care with Your <span class="text-medteal">Punjab Healthcare Care Buddy</span>
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl">
+            Undergoing a medical procedure shouldn’t be complicated. We guide you from surgeon selection and cashless TPA paperwork to admission, bedside recovery, and post-op care.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-2 text-xs text-slate-200">
+            <span class="flex items-center gap-1.5"><span>🛡️</span> 100% Cashless Approval</span>
+            <span class="flex items-center gap-1.5"><span>💳</span> No-Cost EMI Starting ₹2,916/mo</span>
+            <span class="flex items-center gap-1.5"><span>🚕</span> Free Admission & Discharge Cab</span>
+          </div>
+        </div>
+
+        <!-- Care Buddy Feature Highlights -->
+        <div class="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/15 space-y-3">
+          <h3 class="text-sm font-bold text-white flex items-center gap-2">
+            <span>✨</span> How Your Care Buddy Assists You:
+          </h3>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-medteal font-bold text-sm">1.</span>
+              <span><strong>Top Surgeon Matching:</strong> Connects you with senior surgeons with 15+ years experience.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-medteal font-bold text-sm">2.</span>
+              <span><strong>Cashless Insurance Pre-Auth:</strong> Coordinates directly with your insurer/TPA within 60 minutes.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-medteal font-bold text-sm">3.</span>
+              <span><strong>Hospital Bedside Coordination:</strong> Assists with admission paperwork and private room upgrades.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-medteal font-bold text-sm">4.</span>
+              <span><strong>Hassle-Free Discharge:</strong> Coordinates discharge summary, meds kit, and free follow-up visits.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Main Section: Telemetry Sidebar & Surgery / Hospital Registry Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1">
+    
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Telemetry Filters Left Sidebar -->
+      <aside class="lg:col-span-4 bg-slate-900 text-slate-200 rounded-3xl p-6 shadow-2xl border border-slate-800 space-y-6 sticky top-24">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🔍</span>
+            <h3 class="text-base font-black text-white tracking-tight">Telemetry Filters</h3>
+          </div>
+          <button onclick="resetTelemetryFilters()" class="text-2xs font-extrabold text-medteal hover:underline uppercase">Reset Filters</button>
+        </div>
+
+        <div class="space-y-4 text-xs">
+          <!-- Action Button: Find Hospitals Info & Compare -->
+          <div class="pt-1">
+            <button onclick="applyTelemetryFilters(); scrollToTelemetryRegistry();" class="w-full py-3 bg-medteal hover:bg-medtealDark text-white font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+              <span>🏥</span>
+              <span>Find Hospitals Information</span>
+            </button>
+          </div>
+
+          <!-- Filter 0: Hospital Name Search -->
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1.5">Find Hospital Name</label>
+            <div class="relative">
+              <input type="text" id="telemetry-hospital-search" oninput="applyTelemetryFilters()" placeholder="Type hospital name (e.g. City Hospital, Apollo)..." class="w-full bg-slate-800 text-white border border-slate-700 rounded-xl p-2.5 pl-8 focus:outline-none focus:ring-2 focus:ring-medteal font-medium text-xs" />
+              <span class="absolute left-2.5 top-2.5 text-slate-400">🔍</span>
+            </div>
+          </div>
+
+          <!-- Filter 1: Disease Specialty -->
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1.5">Disease Specialty</label>
+            <select id="telemetry-disease" onchange="applyTelemetryFilters()" class="w-full bg-slate-800 text-white border border-slate-700 rounded-xl p-2.5 focus:outline-none focus:ring-2 focus:ring-medteal font-medium">
+              <option value="Any">Any</option>
+              <option value="Arthritis">Arthritis</option>
+              <option value="Asthma">Asthma</option>
+              <option value="COVID-19">COVID-19</option>
+              <option value="Cancer">Cancer</option>
+              <option value="Dengue">Dengue</option>
+              <option value="Diabetes">Diabetes</option>
+              <option value="Heart Disease">Heart Disease</option>
+              <option value="Hypertension">Hypertension</option>
+              <option value="Kidney Disease">Kidney Disease</option>
+              <option value="Liver Disease">Liver Disease</option>
+              <option value="Malaria">Malaria</option>
+              <option value="Pneumonia">Pneumonia</option>
+              <option value="Thyroid Disorder">Thyroid Disorder</option>
+              <option value="Tuberculosis">Tuberculosis</option>
+              <option value="Typhoid">Typhoid</option>
+            </select>
+          </div>
+
+          <!-- Filter 2: Regional District / City -->
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1.5">Regional District / City</label>
+            <select id="telemetry-location" onchange="applyTelemetryFilters()" class="w-full bg-slate-800 text-white border border-slate-700 rounded-xl p-2.5 focus:outline-none focus:ring-2 focus:ring-medteal font-medium">
+              <option value="Any">Any</option>
+              <option value="Abohar">Abohar</option>
+              <option value="Amritsar">Amritsar</option>
+              <option value="Barnala">Barnala</option>
+              <option value="Bathinda">Bathinda</option>
+              <option value="Faridkot">Faridkot</option>
+              <option value="Fazilka">Fazilka</option>
+              <option value="Firozpur">Firozpur</option>
+              <option value="Gurdaspur">Gurdaspur</option>
+              <option value="Hoshiarpur">Hoshiarpur</option>
+              <option value="Jalandhar">Jalandhar</option>
+              <option value="Kapurthala">Kapurthala</option>
+              <option value="Khanna">Khanna</option>
+              <option value="Ludhiana">Ludhiana</option>
+              <option value="Malerkotla">Malerkotla</option>
+              <option value="Mansa">Mansa</option>
+              <option value="Moga">Moga</option>
+              <option value="Mohali">Mohali</option>
+              <option value="Muktsar">Muktsar</option>
+              <option value="Nawanshahr">Nawanshahr</option>
+              <option value="Pathankot">Pathankot</option>
+              <option value="Patiala">Patiala</option>
+              <option value="Rupnagar">Rupnagar</option>
+              <option value="Sangrur">Sangrur</option>
+              <option value="Tarn Taran">Tarn Taran</option>
+            </select>
+          </div>
+
+          <!-- Filter 3: Treatment Modality -->
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1.5">Treatment Modality</label>
+            <select id="telemetry-treatment" onchange="applyTelemetryFilters()" class="w-full bg-slate-800 text-white border border-slate-700 rounded-xl p-2.5 focus:outline-none focus:ring-2 focus:ring-medteal font-medium">
+              <option value="Any">Any</option>
+              <option value="Chemotherapy">Chemotherapy</option>
+              <option value="Counselling">Counselling</option>
+              <option value="Dialysis">Dialysis</option>
+              <option value="Emergency Care">Emergency Care</option>
+              <option value="ICU Care">ICU Care</option>
+              <option value="Medication">Medication</option>
+              <option value="Physiotherapy">Physiotherapy</option>
+              <option value="Radiotherapy">Radiotherapy</option>
+              <option value="Surgery">Surgery</option>
+              <option value="Vaccination">Vaccination</option>
+            </select>
+          </div>
+
+          <!-- Filter 4: Patient Age Group -->
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1.5">Patient Age Group</label>
+            <select id="telemetry-age" onchange="applyTelemetryFilters()" class="w-full bg-slate-800 text-white border border-slate-700 rounded-xl p-2.5 focus:outline-none focus:ring-2 focus:ring-medteal font-medium">
+              <option value="Any">Any</option>
+              <option value="Child">Child</option>
+              <option value="Teenager">Teenager</option>
+              <option value="Young Adult">Young Adult</option>
+              <option value="Adult">Adult</option>
+              <option value="Middle Age">Middle Age</option>
+              <option value="Senior Citizen">Senior Citizen</option>
+            </select>
+          </div>
+
+          <!-- Filter 5: Max Budget Ceiling Slider -->
+          <div>
+            <div class="flex justify-between items-center font-semibold text-slate-300 mb-1">
+              <span>Max Budget Ceiling (₹)</span>
+              <span id="budget-ceiling-val" class="font-extrabold text-medteal">₹5,00,000</span>
+            </div>
+            <input type="range" id="telemetry-budget" min="10000" max="500000" step="10000" value="500000" oninput="applyTelemetryFilters()" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-teal-400" />
+          </div>
+
+          <!-- Filter 6: Minimum Facility Rating -->
+          <div>
+            <div class="flex justify-between items-center font-semibold text-slate-300 mb-1">
+              <span>Minimum Facility Rating</span>
+              <span id="min-rating-val" class="font-extrabold text-amber-400">★ 0.0</span>
+            </div>
+            <input type="range" id="telemetry-rating" min="0" max="5" step="0.5" value="0" oninput="applyTelemetryFilters()" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-400" />
+          </div>
+
+          <!-- Filter 7: Minimum Success Rate -->
+          <div>
+            <div class="flex justify-between items-center font-semibold text-slate-300 mb-1">
+              <span>Minimum Success Rate (%)</span>
+              <span id="min-success-val" class="font-extrabold text-emerald-400">0%</span>
+            </div>
+            <input type="range" id="telemetry-success" min="0" max="100" step="5" value="0" oninput="applyTelemetryFilters()" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400" />
+          </div>
+        </div>
+
+        <!-- Telemetry Stats Cards -->
+        <div class="pt-4 border-t border-slate-800 grid grid-cols-2 gap-3 text-center">
+          <div class="bg-slate-800/80 p-3 rounded-2xl border border-slate-700">
+            <div class="text-2xs text-slate-400 font-bold uppercase">Matching Facilities</div>
+            <div id="telemetry-count-display" class="text-2xl font-black text-white mt-0.5">15,000</div>
+          </div>
+          <div class="bg-slate-800/80 p-3 rounded-2xl border border-slate-700">
+            <div class="text-2xs text-slate-400 font-bold uppercase">Avg Success Rate</div>
+            <div id="telemetry-avg-rate-display" class="text-2xl font-black text-emerald-400 mt-0.5">78.4%</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content Area: Telemetry CSV Matching Hospitals -->
+      <section class="lg:col-span-8 space-y-8">
+        
+        <!-- Live Telemetry Hospital Directory (Loaded from punjab_hospital_15000.csv) -->
+        <div id="telemetry-registry-section">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-medteal">State Hospital Registry • Live Telemetry</span>
+              <h3 class="text-xl font-black text-slate-900 mt-0.5">Punjab Empaneled Surgical Centers (15,000 Dataset)</h3>
+              <p class="text-xs text-slate-500">Filtered dynamically based on your Telemetry sidebar criteria.</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button id="compare-trigger-btn" onclick="openHospitalComparisonModal()" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs rounded-xl shadow-md transition flex items-center gap-1.5 hidden">
+                <span>⚖️</span>
+                <span>Compare Selected (<span id="compare-count-badge">0</span>)</span>
+              </button>
+              <div class="text-2xs font-extrabold bg-slate-900 text-white px-3 py-1.5 rounded-full">
+                Loaded from punjab_hospital_15000.csv
+              </div>
+            </div>
+          </div>
+
+          <div id="telemetry-hospitals-grid" class="grid sm:grid-cols-2 gap-4">
+            <!-- Injected dynamically via JS from PUNJAB_HOSPITAL_DATA -->
+          </div>
+
+          <!-- Pagination / Load More -->
+          <div class="pt-6 text-center" id="load-more-container">
+            <button onclick="loadMoreTelemetryHospitals()" class="px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl shadow-xs transition">
+              Load More Facilities →
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Free Second Opinion Request Modal -->
+  <div id="surgery-callback-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs hidden">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden animate-slide-down border border-slate-100">
+      <div class="bg-slate-900 p-5 text-white flex items-center justify-between">
+        <div>
+          <h3 class="font-bold text-base">Request Free Surgery Second Opinion</h3>
+          <p class="text-xs text-teal-400" id="modal-surgery-name">Cataract Eye Surgery</p>
+        </div>
+        <button onclick="closeSurgeryCallbackModal()" class="text-white/80 hover:text-white text-2xl font-bold">✕</button>
+      </div>
+
+      <div class="p-6 space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Patient Full Name:</label>
+          <input type="text" id="modal-patient-name" placeholder="e.g. Ramesh Verma" class="w-full p-2.5 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-medteal" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Mobile Number:</label>
+            <input type="tel" id="modal-patient-phone" placeholder="98765 43210" class="w-full p-2.5 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-medteal" />
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">City for Admission:</label>
+            <select id="modal-patient-city" class="w-full p-2.5 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-medteal font-semibold">
+              <option value="Amritsar">Amritsar</option>
+              <option value="Ludhiana">Ludhiana</option>
+              <option value="Jalandhar">Jalandhar</option>
+              <option value="Patiala">Patiala</option>
+              <option value="Bathinda">Bathinda</option>
+              <option value="Mohali">Mohali</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Do you have Health Insurance?:</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" class="ins-toggle-btn p-2 rounded-lg border border-medteal bg-teal-50 text-medteal font-bold" onclick="selectIns(this, true)">Yes, Cashless Desired</button>
+            <button type="button" class="ins-toggle-btn p-2 rounded-lg border border-slate-200 text-slate-700 font-medium" onclick="selectIns(this, false)">No (Want 0% EMI)</button>
+          </div>
+        </div>
+
+        <div class="p-3 bg-slate-50 rounded-xl text-slate-500 space-y-1">
+          <div>✓ Your Care Buddy will call you within 15 minutes</div>
+          <div>✓ Free surgeon consultation & cost estimate sheet provided</div>
+        </div>
+
+        <button onclick="submitSurgeryInquiry()" class="w-full py-3 bg-medteal hover:bg-medtealDark text-white font-bold text-xs rounded-xl shadow-md transition">
+          Submit Surgery Request →
+        </button>
+      </div>
+    </div>
+  <!-- Hospital Details Info Modal -->
+  <div id="hospital-info-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs hidden">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden border border-slate-100 animate-slide-down">
+      <div class="bg-slate-900 p-5 text-white flex items-center justify-between">
+        <div>
+          <span class="text-2xs font-extrabold uppercase px-2 py-0.5 rounded bg-medteal text-white">Verified Telemetry Record</span>
+          <h3 class="font-extrabold text-lg mt-1" id="info-modal-name">Hospital Name</h3>
+          <p class="text-xs text-slate-300" id="info-modal-sub">Location & Specialty</p>
+        </div>
+        <button onclick="closeHospitalInfoModal()" class="text-white/80 hover:text-white text-2xl font-bold">✕</button>
+      </div>
+
+      <div class="p-6 space-y-4 text-xs">
+        <div class="grid grid-cols-2 gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+          <div>
+            <span class="text-2xs text-slate-400 block font-semibold">Location / District</span>
+            <span class="font-bold text-slate-900" id="info-modal-location">-</span>
+          </div>
+          <div>
+            <span class="text-2xs text-slate-400 block font-semibold">User Rating</span>
+            <span class="font-extrabold text-amber-600" id="info-modal-rating">-</span>
+          </div>
+          <div>
+            <span class="text-2xs text-slate-400 block font-semibold">Disease Specialty</span>
+            <span class="font-bold text-slate-900" id="info-modal-disease">-</span>
+          </div>
+          <div>
+            <span class="text-2xs text-slate-400 block font-semibold">Treatment Modality</span>
+            <span class="font-bold text-slate-900" id="info-modal-treatment">-</span>
+          </div>
+          <div>
+            <span class="text-2xs text-slate-400 block font-semibold">Target Age Bracket</span>
+            <span class="font-bold text-slate-900" id="info-modal-age">-</span>
+          </div>
+          <div>
+            <span class="text-2xs text-slate-400 block font-semibold">Estimated Tariff</span>
+            <span class="font-extrabold text-slate-900" id="info-modal-budget">-</span>
+          </div>
+        </div>
+
+        <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 text-emerald-950 space-y-1">
+          <div class="font-extrabold text-sm flex items-center justify-between">
+            <span>Clinical Success Telemetry</span>
+            <span id="info-modal-success-badge" class="text-xs bg-emerald-700 text-white px-2 py-0.5 rounded-full">0%</span>
+          </div>
+          <div class="text-2xs text-emerald-800 flex justify-between pt-1">
+            <span>Total Patients Treated: <strong id="info-modal-total-treated">0</strong></span>
+            <span>Successful Recoveries: <strong id="info-modal-successful">0</strong></span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 pt-2">
+          <button id="info-modal-compare-btn" class="flex-1 py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs rounded-xl shadow-sm transition">
+            ➕ Add to Compare
+          </button>
+          <button id="info-modal-book-btn" class="flex-1 py-3 bg-medteal hover:bg-medtealDark text-white font-extrabold text-xs rounded-xl shadow-md transition">
+            Book Appointment →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hospital Side-by-Side Comparison Modal -->
+  <div id="hospital-compare-modal" style="z-index: 100001;" class="fixed inset-0 flex items-center justify-center p-3 sm:p-6 bg-slate-950/75 backdrop-blur-sm hidden" onclick="if(event.target === this) closeHospitalComparisonModal()">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-5xl w-full overflow-hidden border border-slate-200 animate-slide-down max-h-[92vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-5 text-white flex items-center justify-between shrink-0 border-b border-slate-700">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-2xs font-extrabold uppercase tracking-wider">
+            ⚖️ Live Telemetry Comparative Matrix
+          </div>
+          <h3 class="font-black text-lg sm:text-xl text-white mt-1 flex items-center gap-2">
+            <span>Hospital Side-by-Side Comparison</span>
+            <span id="compare-modal-count-tag" class="text-xs font-bold px-2 py-0.5 rounded-md bg-amber-500 text-slate-950">2 Hospitals</span>
+          </h3>
+          <p class="text-2xs sm:text-xs text-slate-300 mt-0.5">Comprehensive comparison based on verified tariffs, success rates, ratings, and patient volumes.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-1 text-2xs px-3 py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold rounded-lg transition" title="Print this comparison">
+            <span>🖨️</span> Print
+          </button>
+          <button onclick="closeHospitalComparisonModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white/90 hover:text-white flex items-center justify-center text-lg font-bold transition">✕</button>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-4 sm:p-6 overflow-y-auto flex-1 space-y-5 bg-slate-50/50">
+        <div id="compare-modal-content">
+          <!-- Injected dynamically via JS comparison engine -->
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="bg-white p-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 shrink-0">
+        <div class="flex items-center gap-2">
+          <button onclick="clearComparisonList()" class="px-4 py-2 border border-rose-200 bg-rose-50 hover:bg-rose-100 text-xs font-bold text-rose-700 rounded-xl transition">
+            🗑️ Clear All Selected
+          </button>
+          <span class="text-2xs text-slate-500 hidden sm:inline">Compare up to 4 facilities simultaneously</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="consult.html" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs rounded-xl transition">
+            👨‍⚕️ Video Consult Specialist
+          </a>
+          <button onclick="closeHospitalComparisonModal()" class="px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl shadow-xs transition">
+            Close Comparison Matrix
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Sticky Bottom Compare Dock (appears when 1 or more hospitals are selected) -->
+  <div id="floating-compare-dock" style="z-index: 9998;" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900/95 backdrop-blur-md text-white px-5 py-3 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 transition-all duration-300 transform translate-y-32 opacity-0 pointer-events-none max-w-xl w-[92vw]">
+    <div class="flex-1 flex items-center gap-3 overflow-hidden">
+      <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center text-lg shrink-0">
+        ⚖️
+      </div>
+      <div class="truncate text-xs">
+        <div class="font-extrabold text-white flex items-center gap-1.5">
+          <span>Comparing Selected</span>
+          <span id="dock-count-badge" class="px-1.5 py-0.2 bg-amber-500 text-slate-950 font-black text-2xs rounded-full">0</span>
+        </div>
+        <div id="dock-hospitals-summary" class="text-2xs text-slate-300 truncate mt-0.5">No facilities selected</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-2 shrink-0">
+      <button onclick="openHospitalComparisonModal()" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs rounded-xl shadow-md transition flex items-center gap-1">
+        <span>Compare Now</span> <span>➔</span>
+      </button>
+      <button onclick="clearComparisonList()" title="Clear selection" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center text-xs font-bold transition">
+        ✕
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs mt-auto py-8 border-t border-slate-800 text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      © 2026 Punjab Healthcare Pvt Ltd • 100% Cashless Surgery Network
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/punjab_hospital_data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ai-checker.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    let selectedTenureMonths = 12;
+    let filteredTelemetryDataset = [];
+    let displayedHospitalLimit = 10;
+    let comparisonList = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const cityParam = urlParams.get('city');
+      const diseaseParam = urlParams.get('disease');
+      if (cityParam && document.getElementById('telemetry-location')) {
+        document.getElementById('telemetry-location').value = cityParam;
+      }
+      if (diseaseParam && document.getElementById('telemetry-disease')) {
+        document.getElementById('telemetry-disease').value = diseaseParam;
+      }
+      applyTelemetryFilters();
+      if (cityParam || diseaseParam) {
+        setTimeout(scrollToTelemetryRegistry, 350);
+      }
+    });
+
+    function scrollToTelemetryRegistry() {
+      const target = document.getElementById('telemetry-registry-section');
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Telemetry Filtering Engine reading from punjab_hospital_15000.csv dataset
+    function applyTelemetryFilters() {
+      if (typeof PUNJAB_HOSPITAL_DATA === 'undefined') return;
+
+      const hospSearch = (document.getElementById('telemetry-hospital-search').value || '').trim().toLowerCase();
+      const disease = document.getElementById('telemetry-disease').value;
+      const location = document.getElementById('telemetry-location').value;
+      const treatment = document.getElementById('telemetry-treatment').value;
+      const age = document.getElementById('telemetry-age').value;
+      const maxBudget = parseFloat(document.getElementById('telemetry-budget').value);
+      const minRating = parseFloat(document.getElementById('telemetry-rating').value);
+      const minSuccess = parseFloat(document.getElementById('telemetry-success').value);
+
+      document.getElementById('budget-ceiling-val').textContent = '₹' + maxBudget.toLocaleString('en-IN');
+      document.getElementById('min-rating-val').textContent = '★ ' + minRating.toFixed(1);
+      document.getElementById('min-success-val').textContent = minSuccess + '%';
+
+      filteredTelemetryDataset = PUNJAB_HOSPITAL_DATA.filter(item => {
+        if (hospSearch && !item.hospital.toLowerCase().includes(hospSearch) && !item.location.toLowerCase().includes(hospSearch)) return false;
+        if (disease !== 'Any' && item.disease !== disease) return false;
+        if (location !== 'Any' && item.location !== location) return false;
+        if (treatment !== 'Any' && item.treatment !== treatment) return false;
+        if (age !== 'Any' && item.age !== age) return false;
+        if (item.budget > maxBudget) return false;
+        if (item.rating < minRating) return false;
+        if (item.success_rate < minSuccess) return false;
+        return true;
+      });
+
+      // Update counters
+      document.getElementById('telemetry-count-display').textContent = filteredTelemetryDataset.length.toLocaleString('en-IN');
+      
+      const avgRate = filteredTelemetryDataset.length > 0 
+        ? (filteredTelemetryDataset.reduce((sum, item) => sum + item.success_rate, 0) / filteredTelemetryDataset.length).toFixed(1) + '%'
+        : 'N/A';
+      document.getElementById('telemetry-avg-rate-display').textContent = avgRate;
+
+      displayedHospitalLimit = 10;
+      renderTelemetryHospitals();
+    }
+
+    function resetTelemetryFilters() {
+      document.getElementById('telemetry-hospital-search').value = '';
+      document.getElementById('telemetry-disease').value = 'Any';
+      document.getElementById('telemetry-location').value = 'Any';
+      document.getElementById('telemetry-treatment').value = 'Any';
+      document.getElementById('telemetry-age').value = 'Any';
+      document.getElementById('telemetry-budget').value = 500000;
+      document.getElementById('telemetry-rating').value = 0;
+      document.getElementById('telemetry-success').value = 0;
+      applyTelemetryFilters();
+    }
+
+    function renderTelemetryHospitals() {
+      const container = document.getElementById('telemetry-hospitals-grid');
+      const itemsToDisplay = filteredTelemetryDataset.slice(0, displayedHospitalLimit);
+
+      if (itemsToDisplay.length === 0) {
+        container.innerHTML = `
+          <div class="sm:col-span-2 text-center py-12 bg-white rounded-3xl border border-slate-200 p-6">
+            <span class="text-3xl">🔍</span>
+            <h4 class="text-sm font-bold text-slate-900 mt-2">No Matching Facilities Found</h4>
+            <p class="text-xs text-slate-500 mt-1">Try relaxing your Telemetry Filters in the left sidebar.</p>
+            <button onclick="resetTelemetryFilters()" class="mt-4 px-4 py-2 bg-medteal text-white text-xs font-bold rounded-xl">Reset Filters</button>
+          </div>
+        `;
+        document.getElementById('load-more-container').classList.add('hidden');
+        return;
+      }
+
+      container.innerHTML = itemsToDisplay.map(item => {
+        const isCompared = comparisonList.some(c => c.id === item.id);
+
+        return `
+          <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between" id="hosp-card-${item.id}">
+            <div>
+              <div class="flex items-center justify-between text-2xs gap-2">
+                <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold uppercase">📍 ${item.location}</span>
+                <span class="px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 font-bold">★ ${item.rating}</span>
+              </div>
+
+              <h4 class="text-sm font-extrabold text-slate-900 mt-3 truncate cursor-pointer hover:text-medteal" onclick="viewHospitalInformation(${item.id})">${item.hospital}</h4>
+              <div class="text-2xs font-bold text-medteal mt-0.5">${item.disease} • ${item.treatment}</div>
+
+              <div class="grid grid-cols-2 gap-2 my-3 p-2.5 bg-slate-50 rounded-xl text-2xs text-slate-600">
+                <div>👨‍👩‍👧 <strong>Target Age:</strong> ${item.age}</div>
+                <div>⚡ <strong>Success Rate:</strong> <span class="text-emerald-700 font-bold">${item.success_rate}%</span></div>
+                <div>👥 <strong>Total Treated:</strong> ${item.total_patients}</div>
+                <div>✅ <strong>Successful:</strong> ${item.successful_patients}</div>
+              </div>
+            </div>
+
+            <div class="space-y-2 pt-3 border-t border-slate-100">
+              <div class="flex items-center justify-between text-xs">
+                <div>
+                  <span class="text-2xs text-slate-400 block">Est. Tariff Budget:</span>
+                  <span class="text-sm font-black text-slate-900">₹${Math.round(item.budget).toLocaleString('en-IN')}</span>
+                </div>
+                <button onclick="viewHospitalInformation(${item.id})" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-2xs rounded-lg transition flex items-center gap-1">
+                  <span>ℹ️</span> Info
+                </button>
+              </div>
+
+              <div class="flex gap-2">
+                <button onclick="toggleCompareHospital(${item.id})" class="flex-1 py-2 ${isCompared ? 'bg-amber-500 text-slate-950 font-black' : 'bg-slate-900 text-white font-bold'} text-2xs rounded-xl shadow-xs transition">
+                  ${isCompared ? '✓ Added to Compare' : '⚖️ Add to Compare'}
+                </button>
+                <button onclick="openSurgeryCallbackModal('${item.hospital} - ${item.disease}')" class="flex-1 py-2 bg-medteal hover:bg-medtealDark text-white font-bold text-2xs rounded-xl shadow-xs transition">
+                  Consult Center
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const loadMoreBtn = document.getElementById('load-more-container');
+      if (displayedHospitalLimit < filteredTelemetryDataset.length) {
+        loadMoreBtn.classList.remove('hidden');
+      } else {
+        loadMoreBtn.classList.add('hidden');
+      }
+    }
+
+    // View Detailed Hospital Information Modal
+    function viewHospitalInformation(hospId) {
+      const hosp = PUNJAB_HOSPITAL_DATA.find(h => h.id === hospId);
+      if (!hosp) return;
+
+      document.getElementById('info-modal-name').textContent = hosp.hospital;
+      document.getElementById('info-modal-sub').textContent = `${hosp.disease} • ${hosp.treatment}`;
+      document.getElementById('info-modal-location').textContent = hosp.location;
+      document.getElementById('info-modal-rating').textContent = `★ ${hosp.rating} / 5.0`;
+      document.getElementById('info-modal-disease').textContent = hosp.disease;
+      document.getElementById('info-modal-treatment').textContent = hosp.treatment;
+      document.getElementById('info-modal-age').textContent = hosp.age;
+      document.getElementById('info-modal-budget').textContent = '₹' + Math.round(hosp.budget).toLocaleString('en-IN');
+      document.getElementById('info-modal-success-badge').textContent = hosp.success_rate + '% Success';
+      document.getElementById('info-modal-total-treated').textContent = hosp.total_patients.toLocaleString('en-IN');
+      document.getElementById('info-modal-successful').textContent = hosp.successful_patients.toLocaleString('en-IN');
+
+      const isCompared = comparisonList.some(c => c.id === hosp.id);
+      const compareBtn = document.getElementById('info-modal-compare-btn');
+      compareBtn.textContent = isCompared ? '✓ Added in Comparison' : '➕ Add to Compare';
+      compareBtn.onclick = () => {
+        toggleCompareHospital(hosp.id);
+        closeHospitalInfoModal();
+      };
+
+      document.getElementById('info-modal-book-btn').onclick = () => {
+        closeHospitalInfoModal();
+        openSurgeryCallbackModal(`${hosp.hospital} - ${hosp.disease}`);
+      };
+
+      document.getElementById('hospital-info-modal').classList.remove('hidden');
+    }
+
+    function closeHospitalInfoModal() {
+      document.getElementById('hospital-info-modal').classList.add('hidden');
+    }
+
+    // Comparison List Handler
+    function toggleCompareHospital(hospId) {
+      const hosp = PUNJAB_HOSPITAL_DATA.find(h => h.id === hospId);
+      if (!hosp) return;
+
+      const idx = comparisonList.findIndex(c => c.id === hospId);
+      if (idx > -1) {
+        comparisonList.splice(idx, 1);
+        store.showToast(`Removed ${hosp.hospital} from comparison.`, 'info');
+      } else {
+        if (comparisonList.length >= 4) {
+          store.showToast('You can compare up to 4 hospitals at a time.', 'warning');
+          return;
+        }
+        comparisonList.push(hosp);
+        store.showToast(`Added ${hosp.hospital} to comparison!`, 'success');
+      }
+
+      updateCompareUI();
+      renderTelemetryHospitals();
+    }
+
+    function updateCompareUI() {
+      const btn = document.getElementById('compare-trigger-btn');
+      const countBadge = document.getElementById('compare-count-badge');
+      const dock = document.getElementById('floating-compare-dock');
+      const dockCountBadge = document.getElementById('dock-count-badge');
+      const dockSummary = document.getElementById('dock-hospitals-summary');
+      
+      if (countBadge) countBadge.textContent = comparisonList.length;
+      
+      if (comparisonList.length > 0) {
+        if (btn) btn.classList.remove('hidden');
+        if (dock) {
+          dock.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+          dock.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+          if (dockCountBadge) dockCountBadge.textContent = comparisonList.length;
+          if (dockSummary) {
+            dockSummary.textContent = comparisonList.map(h => h.hospital).join(' vs ');
+          }
+        }
+      } else {
+        if (btn) btn.classList.add('hidden');
+        if (dock) {
+          dock.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+          dock.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+        }
+      }
+    }
+
+    function clearComparisonList() {
+      comparisonList = [];
+      updateCompareUI();
+      renderTelemetryHospitals();
+      closeHospitalComparisonModal();
+      store.showToast('Comparison selection cleared.', 'info');
+    }
+
+    function openHospitalComparisonModal() {
+      if (comparisonList.length === 0) {
+        store.showToast('Please select at least 1 hospital to compare.', 'warning');
+        return;
+      }
+
+      // Update Header Tag
+      const countTag = document.getElementById('compare-modal-count-tag');
+      if (countTag) {
+        countTag.textContent = `${comparisonList.length} ${comparisonList.length === 1 ? 'Hospital' : 'Hospitals'} Selected`;
+      }
+
+      // Calculate Best-in-Class Metrics
+      const budgets = comparisonList.map(h => Number(h.budget) || 999999999);
+      const lowestBudget = Math.min(...budgets);
+      const highestSuccess = Math.max(...comparisonList.map(h => Number(h.success_rate) || 0));
+      const highestRating = Math.max(...comparisonList.map(h => Number(h.rating) || 0));
+      const highestPatients = Math.max(...comparisonList.map(h => Number(h.total_patients) || 0));
+
+      // Automated AI Verdict Text Generation
+      let verdictHtml = '';
+      if (comparisonList.length >= 2) {
+        const cheapest = comparisonList.find(h => Number(h.budget) === lowestBudget);
+        const mostSuccessful = comparisonList.find(h => Number(h.success_rate) === highestSuccess);
+        const highestRated = comparisonList.find(h => Number(h.rating) === highestRating);
+
+        const priceDiff = Math.abs(comparisonList[0].budget - comparisonList[1].budget);
+
+        verdictHtml = `
+          <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-sky-50 border border-teal-200 rounded-2xl p-4 sm:p-5 text-xs text-slate-800 shadow-xs">
+            <div class="flex items-center gap-2 font-extrabold text-sm text-medteal mb-1">
+              <span>💡</span>
+              <span>AI Comparative Analytics Summary</span>
+            </div>
+            <p class="leading-relaxed text-slate-700">
+              ${cheapest ? `<strong>${cheapest.hospital}</strong> offers the most cost-effective tariff at <strong>₹${Math.round(cheapest.budget).toLocaleString('en-IN')}</strong>${priceDiff > 0 ? ` (saving up to <strong>₹${Math.round(priceDiff).toLocaleString('en-IN')}</strong>)` : ''}. ` : ''}
+              ${mostSuccessful ? `Meanwhile, <strong>${mostSuccessful.hospital}</strong> leads with the highest clinical success rate at <strong class="text-emerald-700">${mostSuccessful.success_rate}%</strong>.` : ''}
+              ${highestRated && highestRated !== mostSuccessful ? ` <strong>${highestRated.hospital}</strong> holds the top patient rating of <strong>★ ${highestRated.rating}/5.0</strong>.` : ''}
+              Both institutions are empanelled for <strong>100% cashless hospitalization</strong> under Ayushman Bharat / Corporate TPAs with dedicated <strong>Punjab Healthcare Care Buddy</strong> bedside assistance.
+            </p>
+          </div>
+        `;
+      }
+
+      // Visual Summary Cards
+      const cardsHtml = `
+        <div class="grid sm:grid-cols-2 md:grid-cols-${Math.min(comparisonList.length, 4)} gap-4">
+          ${comparisonList.map(h => {
+            const isLowestBudget = Number(h.budget) === lowestBudget;
+            const isTopSuccess = Number(h.success_rate) === highestSuccess;
+            const isTopRating = Number(h.rating) === highestRating;
+            const isTopVolume = Number(h.total_patients) === highestPatients;
+
+            return `
+              <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs flex flex-col justify-between relative overflow-hidden">
+                <button onclick="toggleCompareHospital(${h.id}); openHospitalComparisonModal();" title="Remove from comparison" class="absolute top-3 right-3 w-6 h-6 rounded-full bg-slate-100 hover:bg-rose-100 text-slate-500 hover:text-rose-600 flex items-center justify-center text-xs font-bold transition">
+                  ✕
+                </button>
+                <div>
+                  <div class="flex flex-wrap gap-1 mb-2">
+                    ${isLowestBudget ? '<span class="bg-blue-100 text-blue-800 text-2xs font-extrabold px-2 py-0.5 rounded-full">💰 Lowest Budget</span>' : ''}
+                    ${isTopSuccess ? '<span class="bg-emerald-100 text-emerald-800 text-2xs font-extrabold px-2 py-0.5 rounded-full">🏆 Top Success</span>' : ''}
+                    ${isTopRating ? '<span class="bg-amber-100 text-amber-800 text-2xs font-extrabold px-2 py-0.5 rounded-full">⭐ Highest Rating</span>' : ''}
+                    ${isTopVolume ? '<span class="bg-purple-100 text-purple-800 text-2xs font-extrabold px-2 py-0.5 rounded-full">👥 High Volume</span>' : ''}
+                  </div>
+
+                  <h4 class="font-extrabold text-sm text-slate-900 pr-6">${h.hospital}</h4>
+                  <div class="text-2xs text-slate-500 mt-0.5">📍 ${h.location}, Punjab • ★ ${h.rating}</div>
+
+                  <div class="my-3 p-3 bg-slate-50 rounded-xl space-y-2 border border-slate-100">
+                    <div class="flex justify-between items-center text-xs">
+                      <span class="text-slate-500 font-medium">Est. Tariff:</span>
+                      <span class="font-black text-slate-900 ${isLowestBudget ? 'text-emerald-700' : ''}">₹${Math.round(h.budget).toLocaleString('en-IN')}</span>
+                    </div>
+
+                    <div class="space-y-1">
+                      <div class="flex justify-between items-center text-2xs">
+                        <span class="text-slate-500">Success Rate:</span>
+                        <span class="font-bold text-emerald-700">${h.success_rate}%</span>
+                      </div>
+                      <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-emerald-500 h-full rounded-full" style="width: ${Math.min(h.success_rate, 100)}%;"></div>
+                      </div>
+                    </div>
+
+                    <div class="flex justify-between items-center text-2xs text-slate-600">
+                      <span>Total Treated:</span>
+                      <span class="font-bold text-slate-800">${Number(h.total_patients || 0).toLocaleString('en-IN')} patients</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-2">
+                  <button onclick="closeHospitalComparisonModal(); openSurgeryCallbackModal('${h.hospital} - ${h.disease}');" class="w-full py-2.5 bg-medteal hover:bg-medtealDark text-white font-extrabold text-xs rounded-xl shadow-xs transition flex items-center justify-center gap-1.5">
+                    <span>Book Admission</span> <span>➔</span>
+                  </button>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+
+      // Detailed Side-by-Side Comparison Table
+      const tableHtml = `
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+          <div class="p-3.5 bg-slate-900 text-white font-extrabold text-xs flex items-center justify-between">
+            <span>Detailed Metric-by-Metric Breakdown</span>
+            <span class="text-slate-400 font-normal text-2xs">Official Telemetry Registry Data</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse min-w-[650px] text-xs">
+              <thead>
+                <tr class="bg-slate-100/80 border-b border-slate-200">
+                  <th class="p-3.5 font-extrabold text-slate-700 w-1/4">Comparison Parameters</th>
+                  ${comparisonList.map(h => `
+                    <th class="p-3.5 font-black text-slate-900 border-l border-slate-200 bg-slate-50/70">
+                      <div class="flex items-center justify-between gap-1">
+                        <span class="truncate">${h.hospital}</span>
+                        <button onclick="toggleCompareHospital(${h.id}); openHospitalComparisonModal();" title="Remove" class="text-rose-500 hover:text-rose-700 font-bold ml-1 text-sm">✕</button>
+                      </div>
+                    </th>
+                  `).join('')}
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">District / City Location</td>
+                  ${comparisonList.map(h => `<td class="p-3.5 font-bold text-slate-800 border-l border-slate-200">📍 ${h.location}, Punjab</td>`).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Primary Disease Specialty</td>
+                  ${comparisonList.map(h => `<td class="p-3.5 font-bold text-medteal border-l border-slate-200">🩺 ${h.disease}</td>`).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Treatment Modality</td>
+                  ${comparisonList.map(h => `<td class="p-3.5 font-bold text-slate-800 border-l border-slate-200">🔬 ${h.treatment}</td>`).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Patient Age Suitability</td>
+                  ${comparisonList.map(h => `<td class="p-3.5 font-bold text-slate-700 border-l border-slate-200">👨‍👩‍👧 ${h.age || 'All Ages'}</td>`).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Estimated Tariff Budget</td>
+                  ${comparisonList.map(h => {
+                    const isLowest = Number(h.budget) === lowestBudget;
+                    return `
+                      <td class="p-3.5 font-black border-l border-slate-200 text-sm ${isLowest ? 'text-emerald-700 bg-emerald-50/40' : 'text-slate-900'}">
+                        ₹${Math.round(h.budget).toLocaleString('en-IN')}
+                        ${isLowest ? '<span class="block text-2xs font-extrabold text-emerald-700">✓ Best Tariff Rate</span>' : ''}
+                      </td>
+                    `;
+                  }).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Verified Patient Rating</td>
+                  ${comparisonList.map(h => {
+                    const isTop = Number(h.rating) === highestRating;
+                    return `
+                      <td class="p-3.5 font-extrabold border-l border-slate-200 ${isTop ? 'text-amber-600 bg-amber-50/40' : 'text-slate-800'}">
+                        ★ ${h.rating} / 5.0
+                        ${isTop ? '<span class="block text-2xs font-extrabold text-amber-700">★ Top Rated Facility</span>' : ''}
+                      </td>
+                    `;
+                  }).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Clinical Success Rate</td>
+                  ${comparisonList.map(h => {
+                    const isTop = Number(h.success_rate) === highestSuccess;
+                    return `
+                      <td class="p-3.5 font-black border-l border-slate-200 text-sm ${isTop ? 'text-emerald-700 bg-emerald-50/40' : 'text-slate-800'}">
+                        ${h.success_rate}%
+                        ${isTop ? '<span class="block text-2xs font-extrabold text-emerald-700">🏆 Leading Clinical Outcome</span>' : ''}
+                      </td>
+                    `;
+                  }).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Total Treated Patients</td>
+                  ${comparisonList.map(h => `<td class="p-3.5 font-bold text-slate-800 border-l border-slate-200">${Number(h.total_patients || 0).toLocaleString('en-IN')} patients</td>`).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Successful Recoveries</td>
+                  ${comparisonList.map(h => `<td class="p-3.5 font-bold text-emerald-800 border-l border-slate-200">${Number(h.successful_patients || 0).toLocaleString('en-IN')} cases</td>`).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Cashless Insurance / Ayushman</td>
+                  ${comparisonList.map(() => `
+                    <td class="p-3.5 font-bold text-emerald-700 border-l border-slate-200">
+                      ✓ 100% Cashless Empanelled
+                      <span class="block text-2xs font-normal text-slate-500">₹0 Upfront Deposit</span>
+                    </td>
+                  `).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Bedside Care Buddy</td>
+                  ${comparisonList.map(() => `
+                    <td class="p-3.5 font-bold text-slate-700 border-l border-slate-200">
+                      ✓ Dedicated Concierge
+                      <span class="block text-2xs font-normal text-slate-500">Free admission to discharge</span>
+                    </td>
+                  `).join('')}
+                </tr>
+                <tr>
+                  <td class="p-3.5 font-semibold text-slate-600 bg-slate-50/50">Immediate Action</td>
+                  ${comparisonList.map(h => `
+                    <td class="p-3.5 border-l border-slate-200">
+                      <button onclick="closeHospitalComparisonModal(); openSurgeryCallbackModal('${h.hospital} - ${h.disease}');" class="w-full py-2 bg-medteal hover:bg-medtealDark text-white font-extrabold text-2xs rounded-xl shadow-xs transition">
+                        Book Admission →
+                      </button>
+                    </td>
+                  `).join('')}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+
+      const content = document.getElementById('compare-modal-content');
+      content.innerHTML = `
+        <div class="space-y-6">
+          ${verdictHtml}
+          ${cardsHtml}
+          ${tableHtml}
+        </div>
+      `;
+
+      const modal = document.getElementById('hospital-compare-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // prevent background scrolling
+      }
+    }
+
+    function closeHospitalComparisonModal() {
+      const modal = document.getElementById('hospital-compare-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = ''; // restore scrolling
+      }
+    }
+
+    // Keyboard Escape listener to close comparison modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeHospitalComparisonModal();
+      }
+    });
+
+    function loadMoreTelemetryHospitals() {
+      displayedHospitalLimit += 10;
+      renderTelemetryHospitals();
+    }
+
+
+
+    function openSurgeryCallbackModal(surgName) {
+      document.getElementById('modal-surgery-name').textContent = surgName;
+      document.getElementById('surgery-callback-modal').classList.remove('hidden');
+    }
+
+    function closeSurgeryCallbackModal() {
+      document.getElementById('surgery-callback-modal').classList.add('hidden');
+    }
+
+    function selectIns(btn, hasIns) {
+      document.querySelectorAll('.ins-toggle-btn').forEach(b => {
+        b.className = 'ins-toggle-btn p-2 rounded-lg border border-slate-200 text-slate-700 font-medium';
+      });
+      btn.className = 'ins-toggle-btn p-2 rounded-lg border border-medteal bg-teal-50 text-medteal font-bold';
+    }
+
+    function submitSurgeryInquiry() {
+      const name = document.getElementById('modal-patient-name').value.trim() || 'Valued Patient';
+      const surg = document.getElementById('modal-surgery-name').textContent;
+
+      closeSurgeryCallbackModal();
+      store.showToast(`Thank you, ${name}! Your Punjab Healthcare Care Buddy has been assigned for ${surg}. We will call you within 15 minutes.`, 'success');
+    }
+  </script>
+
+</body>
+</html>

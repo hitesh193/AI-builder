@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cashless Insurance & Network Hospitals | Punjab Healthcare TPA Hub</title>
+  <meta name="description" content="Search 4,500+ cashless network hospitals across India and track real-time health insurance claim status on Punjab Healthcare.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            medblue: '#1b3b6f',
+            mednavy: '#0f2444',
+            medteal: '#00A389',
+            medtealDark: '#007d69',
+            medelectric: '#0066dc',
+            medgold: '#f59e0b'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-medblue to-medteal flex items-center justify-center text-white text-2xl shadow-md">
+            🩺
+          </div>
+          <div>
+            <div class="text-2xl font-black tracking-tight text-medblue leading-none">
+              Punjab <span class="text-medteal">Healthcare</span>
+            </div>
+            <div class="text-2xs font-extrabold uppercase tracking-widest text-slate-400 mt-0.5">Insurance & Corporate</div>
+          </div>
+        </a>
+
+        <div class="flex-1 max-w-xl mx-2 hidden sm:block">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 text-sm">🔍</span>
+            <input type="text" placeholder="Search cashless hospital by name, area, or PIN code..." class="universal-search-input w-full pl-10 pr-4 py-2.5 bg-slate-100/80 focus:bg-white text-xs font-medium rounded-full border border-slate-200 focus:outline-none focus:ring-2 focus:ring-medteal transition" />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="#claim-tracker" class="px-4 py-2 bg-medteal hover:bg-medtealDark text-white rounded-xl text-xs font-bold shadow-sm transition">
+            Track Live Claim
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Secondary Services Navbar -->
+      <nav class="flex items-center justify-start py-2.5 border-t border-slate-100 text-xs font-bold text-slate-600 overflow-x-auto gap-8">
+        <a href="consult.html" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap">
+          <span>📞</span> Hospital Contact Numbers
+        </a>
+        <a href="surgeries.html" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap">
+          <span>🏥</span> Surgery Care & Care Buddy
+        </a>
+        <button onclick="aiChecker.open()" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap cursor-pointer">
+          <span>🤖</span> Ask AI Assistant
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Insurance Hero & Corporate Wallet -->
+  <section class="bg-gradient-to-r from-slate-900 via-mednavy to-medblue text-white py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-7 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-cyan-300 text-xs font-bold border border-white/15">
+            <span>🛡️</span> India's Largest Cashless Hospital Network
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+            Cashless Hospitalization & <span class="text-cyan-300">Live Claim Tracker</span>
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
+            Empaneled with over 4,500 leading hospitals including Apollo, Fortis, Manipal, Max, and Narayana Health. Track your pre-authorization in real-time.
+          </p>
+        </div>
+
+        <!-- Corporate Health Wallet Card -->
+        <div class="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 text-white shadow-xl space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Corporate Health Benefits</span>
+            <span class="text-2xs bg-emerald-400 text-slate-950 font-black px-2 py-0.5 rounded-full">ACTIVE TPA</span>
+          </div>
+
+          <div class="pt-2">
+            <div class="text-2xs text-slate-300">Available Corporate Wallet Allowance:</div>
+            <div class="text-3xl font-black text-white">₹12,500</div>
+            <div class="text-2xs text-emerald-300 font-semibold mt-1">Eligible for pharmacy orders, outpatient consults & health packages.</div>
+          </div>
+
+          <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs">
+            <span class="text-slate-300">E-Card: <strong>NIC-RET-8849201</strong></span>
+            <button onclick="store.showToast('Digital E-Card downloaded to your device.', 'success')" class="text-cyan-300 hover:underline font-bold">
+              Download E-Card ↓
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Cashless Claim Tracker Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="claim-tracker">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-2xs font-extrabold uppercase px-2.5 py-1 rounded-full bg-medteal/10 text-medteal tracking-wider">Live Real-Time Tracker</span>
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-2">Track Cashless Hospitalization Claim</h2>
+          <p class="text-xs text-slate-500">Enter your Claim ID to view current TPA pre-authorization status and settlement milestone.</p>
+        </div>
+
+        <!-- Claim Search Input -->
+        <div class="flex gap-2 shrink-0">
+          <input type="text" id="claim-query-input" placeholder="e.g. MED-78291" value="MED-78291" class="px-3.5 py-2 text-xs font-bold uppercase border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-medteal" />
+          <button onclick="searchClaim()" class="px-5 py-2 bg-medteal hover:bg-medtealDark text-white text-xs font-bold rounded-xl shadow-xs transition">
+            Track Claim
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Claim Result Container -->
+      <div id="claim-details-container" class="space-y-6 pt-4 border-t border-slate-100">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Network Hospitals Directory -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 space-y-6" id="hospitals">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-medteal">Empaneled Centers</span>
+        <h2 class="text-2xl font-black text-slate-900 mt-1">Locate Cashless Network Hospitals</h2>
+        <p class="text-xs text-slate-500">Premier tertiary healthcare institutions with dedicated Medroute TPA desks.</p>
+      </div>
+
+      <!-- City Switcher -->
+      <div class="flex items-center gap-2">
+        <label class="text-xs font-bold text-slate-600">Select City:</label>
+        <select id="hospital-city-select" onchange="renderHospitals()" class="text-xs font-bold p-2 bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-medteal">
+          <option value="all">All Punjab Districts</option>
+          <option value="ludhiana">Ludhiana</option>
+          <option value="amritsar">Amritsar</option>
+          <option value="jalandhar">Jalandhar</option>
+          <option value="bathinda">Bathinda</option>
+          <option value="mohali">Mohali</option>
+          <option value="patiala">Patiala</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Hospitals Grid -->
+    <div class="grid md:grid-cols-2 gap-6" id="hospitals-grid">
+      <!-- Injected via JS -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs mt-auto py-8 border-t border-slate-800 text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      © 2026 Medroute Technologies Pvt Ltd • Cashless Insurance Hospital Network
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/punjab_hospital_data.js"></script>
+  <script src="js/ai-checker.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      searchClaim();
+      renderHospitals();
+    });
+
+    function searchClaim() {
+      const input = document.getElementById('claim-query-input');
+      const claimId = (input ? input.value.trim() : 'MED-78291').toUpperCase();
+      const container = document.getElementById('claim-details-container');
+      const claim = MEDROUTE_DATA.sampleClaims[claimId];
+
+      if (!claim) {
+        container.innerHTML = `
+          <div class="p-8 text-center text-slate-400">
+            <div class="text-4xl mb-2">🔍</div>
+            <div class="font-bold text-slate-700">No claim record found for "${claimId}"</div>
+            <div class="text-xs text-slate-500 mt-1">Try sample IDs: <strong>MED-78291</strong> or <strong>MED-44120</strong></div>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 grid sm:grid-cols-4 gap-4 text-xs">
+          <div>
+            <span class="text-slate-400 block font-medium">Patient Name:</span>
+            <span class="font-bold text-slate-900 text-sm">${claim.patientName} (${claim.age} yrs)</span>
+            <span class="text-2xs text-slate-500 block">Policy: ${claim.policyNumber}</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block font-medium">Hospital & Procedure:</span>
+            <span class="font-bold text-slate-900">${claim.treatment}</span>
+            <span class="text-2xs text-medteal font-semibold block truncate">${claim.hospital}</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block font-medium">Pre-Auth Status:</span>
+            <span class="inline-flex items-center gap-1 font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full mt-0.5">
+              <span>●</span> ${claim.statusText}
+            </span>
+            <span class="text-2xs text-slate-500 block mt-0.5">Approved: ${claim.approvedAmount}</span>
+          </div>
+          <div class="flex items-center justify-end">
+            <button onclick="store.showToast('Calling Hospital TPA Desk (+91 124 4962200)...', 'info')" class="px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-slate-800 transition">
+              Call TPA Desk
+            </button>
+          </div>
+        </div>
+
+        <!-- Step-by-Step Progress Timeline -->
+        <div class="pt-4">
+          <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Milestone Progress Timeline:</div>
+          <div class="relative border-l-2 border-emerald-500 ml-4 space-y-6 pb-2">
+            ${claim.steps.map(step => `
+              <div class="relative pl-6">
+                <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full ${step.done ? 'bg-emerald-500 ring-4 ring-emerald-100' : (step.active ? 'bg-amber-500 ring-4 ring-amber-100 animate-pulse' : 'bg-slate-300')}"></span>
+                <div class="font-bold text-xs ${step.active ? 'text-amber-800 font-extrabold' : 'text-slate-800'}">${step.title}</div>
+                <div class="text-2xs text-slate-400 mt-0.5">${step.time}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderHospitals() {
+      const citySelect = document.getElementById('hospital-city-select');
+      const city = citySelect ? citySelect.value : 'all';
+      const container = document.getElementById('hospitals-grid');
+
+      let list = MEDROUTE_DATA.hospitals;
+      if (city !== 'all') {
+        list = list.filter(h => h.city === city);
+      }
+
+      container.innerHTML = list.map(h => `
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition hover-lift flex flex-col justify-between">
+          <div>
+            <div class="flex items-start gap-4">
+              <img src="${h.image}" class="w-24 h-24 rounded-2xl object-cover border border-slate-100 shrink-0 shadow-xs" />
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <h3 class="text-base font-bold text-slate-900">${h.name}</h3>
+                </div>
+                <div class="text-xs font-semibold text-medteal">${h.branch} • ${h.network}</div>
+                <p class="text-2xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">${h.address}</p>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <span class="text-2xs font-extrabold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">✓ Cashless TPA Desk</span>
+                  <span class="text-2xs text-slate-500 font-bold">★ ${h.rating} (${h.reviewsCount})</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accreditations & Specs -->
+            <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center gap-2 text-2xs">
+              <span class="text-slate-400 font-bold">Accreditations:</span>
+              ${h.accreditation.map(acc => `<span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-semibold">${acc}</span>`).join('')}
+              <span class="ml-auto text-slate-500 font-semibold">${h.beds} Beds</span>
+            </div>
+
+            <div class="mt-2 text-2xs text-slate-500">
+              <strong>TPA Partners:</strong> ${h.tpaPartners.slice(0, 4).join(', ')} +more
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between">
+            <span class="text-xs text-slate-600 font-semibold">📞 ${h.emergencyPhone}</span>
+            <button onclick="store.showToast('Connected with cashless admission desk at ${h.name}', 'success')" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold transition">
+              Locate & Admit
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+
+</body>
+</html>

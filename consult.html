@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Contact Numbers & 24x7 Helplines | Punjab Healthcare</title>
+  <meta name="description" content="Verified Punjab Hospital Contact Numbers, Emergency Helplines, Casualty Desks, Reception Phone Numbers, and Ambulance Services across all 24 Punjab districts.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            medblue: '#1b3b6f',
+            mednavy: '#0f2444',
+            medteal: '#00A389',
+            medtealDark: '#007d69',
+            medelectric: '#0066dc',
+            medgold: '#f59e0b'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-medblue to-medteal flex items-center justify-center text-white text-2xl shadow-md">
+            🩺
+          </div>
+          <div>
+            <div class="text-2xl font-black tracking-tight text-medblue leading-none">
+              Punjab <span class="text-medteal">Healthcare</span>
+            </div>
+            <div class="text-2xs font-extrabold uppercase tracking-widest text-slate-400 mt-0.5">Hospital Contact Numbers & Helplines</div>
+          </div>
+        </a>
+
+        <!-- Global Search Bar -->
+        <div class="flex-1 max-w-xl mx-2 hidden sm:block">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 text-sm">🔍</span>
+            <input type="text" id="header-hospital-search" oninput="handleSearchInput(this.value)" placeholder="Search hospital name, contact number, or district..." class="universal-search-input w-full pl-10 pr-4 py-2.5 bg-slate-100/80 focus:bg-white text-xs font-medium rounded-full border border-slate-200 focus:outline-none focus:ring-2 focus:ring-medteal transition" />
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="tel:108" class="flex items-center gap-1.5 px-3.5 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-extrabold shadow-sm transition animate-pulse">
+            <span>🚨</span>
+            <span>Call 108 Ambulance</span>
+          </a>
+          <a href="insurance.html" class="hidden sm:flex items-center gap-1 px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold transition">
+            <span>🛡️</span> Cashless TPA
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Secondary Services Navbar -->
+      <nav class="flex items-center justify-start py-2.5 border-t border-slate-100 text-xs font-bold text-slate-600 overflow-x-auto gap-8">
+        <a href="consult.html" class="flex items-center gap-1.5 text-medteal border-b-2 border-medteal pb-1 whitespace-nowrap">
+          <span>📞</span> Hospital Contact Numbers
+        </a>
+        <a href="surgeries.html" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap">
+          <span>🏥</span> Surgery Care & Care Buddy
+        </a>
+        <button onclick="aiChecker.open()" class="flex items-center gap-1.5 hover:text-medteal transition whitespace-nowrap cursor-pointer">
+          <span>🤖</span> Ask AI Assistant
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Emergency Quick Dial Bar -->
+  <div class="bg-rose-50 border-b border-rose-200 py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
+      <div class="flex items-center gap-2 text-rose-900 font-extrabold">
+        <span class="w-2.5 h-2.5 rounded-full bg-rose-600 animate-ping"></span>
+        <span>24x7 Punjab State Emergency Healthcare Helplines:</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 text-xs font-bold">
+        <a href="tel:108" class="text-rose-700 hover:text-rose-900 flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-rose-200 shadow-xs">
+          <span>🚑 Ambulance:</span> <span class="font-extrabold underline">108 (Toll Free)</span>
+        </a>
+        <a href="tel:104" class="text-slate-800 hover:text-medteal flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-slate-200 shadow-xs">
+          <span>🩺 Punjab Health Advice:</span> <span class="font-extrabold underline">104</span>
+        </a>
+        <a href="tel:112" class="text-slate-800 hover:text-medteal flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-slate-200 shadow-xs">
+          <span>🚨 Emergency Response:</span> <span class="font-extrabold underline">112</span>
+        </a>
+        <a href="tel:18004259999" class="text-slate-800 hover:text-medteal flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-slate-200 shadow-xs">
+          <span>🛡️ Ayushman Helpline:</span> <span class="font-extrabold underline">1800-425-9999</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-mednavy via-medblue to-slate-900 text-white py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        
+        <div class="space-y-3 flex-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-medteal/20 text-medteal text-xs font-bold border border-medteal/30">
+            <span class="w-2 h-2 rounded-full bg-medteal animate-pulse"></span>
+            Punjab State Hospital Directory & Direct Contact Numbers
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+            Verified Punjab Hospital <span class="text-medteal">Contact Numbers & Helplines</span>
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+            Directly connect with official reception numbers, emergency trauma casualty desks, ambulance dispatch, ICU desks, and cashless TPA desks across premier hospitals in all 24 Punjab districts.
+          </p>
+
+          <!-- Quick Stats Banner -->
+          <div class="flex flex-wrap items-center gap-6 pt-2 text-xs text-slate-300">
+            <div><strong class="text-white text-base">24</strong> Punjab Districts</div>
+            <div><strong class="text-white text-base">15,000+</strong> Hospital Records</div>
+            <div><strong class="text-emerald-400 text-base">24x7</strong> Direct Phone Lines</div>
+            <div><strong class="text-white text-base">100%</strong> Verified Numbers</div>
+          </div>
+        </div>
+
+        <!-- Fast Call Box Card -->
+        <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 shrink-0 w-full lg:w-96 shadow-2xl space-y-4">
+          <div class="flex items-center justify-between border-b border-white/15 pb-2">
+            <span class="text-xs font-bold text-slate-200 uppercase tracking-wider">Fast Emergency Dial</span>
+            <span class="text-2xs font-extrabold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded-full">Active Now</span>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/10">
+              <div>
+                <div class="font-bold text-white">CMC Hospital Ludhiana</div>
+                <div class="text-2xs text-slate-400">Casualty & Emergency Desk</div>
+              </div>
+              <a href="tel:+911612115000" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold flex items-center gap-1 shadow-xs">
+                <span>📞 Call</span>
+              </a>
+            </div>
+
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/10">
+              <div>
+                <div class="font-bold text-white">Fortis Hospital Mohali</div>
+                <div class="text-2xs text-slate-400">Trauma & ICU Direct</div>
+              </div>
+              <a href="tel:+911724692222" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold flex items-center gap-1 shadow-xs">
+                <span>📞 Call</span>
+              </a>
+            </div>
+
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/10">
+              <div>
+                <div class="font-bold text-white">DMCH Ludhiana</div>
+                <div class="text-2xs text-slate-400">Hero Heart & Trauma</div>
+              </div>
+              <a href="tel:+911614687700" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold flex items-center gap-1 shadow-xs">
+                <span>📞 Call</span>
+              </a>
+            </div>
+          </div>
+
+          <button onclick="aiChecker.open()" class="w-full py-2 bg-medteal hover:bg-medtealDark text-white text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
+            <span>🤖</span>
+            <span>Ask AI for Nearest Hospital Number</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Directory: Filters & Hospital Contact Cards -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1">
+    
+    <!-- Filter & Search Bar -->
+    <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-xs mb-8 space-y-4">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        
+        <!-- Search Input -->
+        <div class="flex-1 relative">
+          <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 text-sm">🔍</span>
+          <input type="text" id="hospital-keyword-input" oninput="handleSearchInput(this.value)" placeholder="Search by hospital name, contact number, or medical specialty..." class="w-full pl-10 pr-4 py-2.5 bg-slate-50 focus:bg-white text-xs font-medium rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-medteal transition" />
+        </div>
+
+        <!-- District Selector -->
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="text-xs font-bold text-slate-600 whitespace-nowrap">📍 District:</span>
+          <select id="hospital-district-filter" onchange="filterHospitals()" class="text-xs font-bold bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-slate-800 focus:outline-none focus:ring-2 focus:ring-medteal">
+            <option value="all">All Punjab Districts (24)</option>
+            <option value="ludhiana">Ludhiana</option>
+            <option value="amritsar">Amritsar</option>
+            <option value="jalandhar">Jalandhar</option>
+            <option value="bathinda">Bathinda</option>
+            <option value="mohali">Mohali (SAS Nagar)</option>
+            <option value="patiala">Patiala</option>
+            <option value="pathankot">Pathankot</option>
+            <option value="hoshiarpur">Hoshiarpur</option>
+            <option value="moga">Moga</option>
+            <option value="barnala">Barnala</option>
+            <option value="firozpur">Firozpur</option>
+            <option value="faridkot">Faridkot</option>
+            <option value="kapurthala">Kapurthala</option>
+            <option value="malerkotla">Malerkotla</option>
+            <option value="khanna">Khanna</option>
+            <option value="mansa">Mansa</option>
+            <option value="muktsar">Sri Muktsar Sahib</option>
+            <option value="nawanshahr">Nawanshahr</option>
+            <option value="rupnagar">Rupnagar (Ropar)</option>
+            <option value="sangrur">Sangrur</option>
+            <option value="fazilka">Fazilka</option>
+            <option value="abohar">Abohar</option>
+            <option value="tarn-taran">Tarn Taran</option>
+            <option value="gurdaspur">Gurdaspur</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs border-t border-slate-100 pt-3">
+        <button onclick="selectCategory('all')" class="cat-pill px-4 py-2 rounded-xl font-bold bg-slate-900 text-white shadow-xs whitespace-nowrap" data-cat="all">All Hospitals</button>
+        <button onclick="selectCategory('emergency')" class="cat-pill px-4 py-2 rounded-xl font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap" data-cat="emergency">🚨 24x7 Emergency & Trauma</button>
+        <button onclick="selectCategory('govt')" class="cat-pill px-4 py-2 rounded-xl font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap" data-cat="govt">🏛️ Government Medical Colleges</button>
+        <button onclick="selectCategory('cardiac')" class="cat-pill px-4 py-2 rounded-xl font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap" data-cat="cardiac">❤️ Heart & Cath Lab</button>
+        <button onclick="selectCategory('cancer')" class="cat-pill px-4 py-2 rounded-xl font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap" data-cat="cancer">🎗️ Cancer & Oncology</button>
+        <button onclick="selectCategory('ayushman')" class="cat-pill px-4 py-2 rounded-xl font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap" data-cat="ayushman">🛡️ Cashless Ayushman Bharat</button>
+      </div>
+    </div>
+
+    <!-- Active Filter Indicator & Count -->
+    <div class="flex items-center justify-between mb-6 text-xs text-slate-500">
+      <div>
+        Showing <span id="hospitals-count" class="font-extrabold text-slate-900">8</span> verified Punjab hospitals with direct contact numbers
+      </div>
+      <div class="flex items-center gap-1.5 text-emerald-700 font-bold">
+        <span>●</span> Click any number to dial directly
+      </div>
+    </div>
+
+    <!-- Hospital Cards Grid -->
+    <div id="hospitals-contact-grid" class="grid lg:grid-cols-2 gap-6">
+      <!-- Injected dynamically via JavaScript -->
+    </div>
+
+
+
+  </main>
+
+  <!-- Detailed Contact Numbers & Extension Modal -->
+  <div id="hospital-contact-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs hidden">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden animate-slide-down border border-slate-100">
+      
+      <div class="bg-gradient-to-r from-medblue to-medteal p-6 text-white flex items-start justify-between">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-2xs font-extrabold bg-white/20 text-white uppercase tracking-wider">Official Hospital Contact Directory</span>
+          <h3 class="font-black text-xl mt-1" id="modal-hospital-name">Christian Medical College & Hospital</h3>
+          <p class="text-xs text-teal-100 mt-0.5" id="modal-hospital-address">Brown Road, Ludhiana, Punjab</p>
+        </div>
+        <button onclick="closeContactModal()" class="text-white/80 hover:text-white text-2xl font-bold p-1">✕</button>
+      </div>
+
+      <div class="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
+        
+        <!-- Emergency Direct Line Banner -->
+        <div class="p-4 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-between gap-4">
+          <div>
+            <div class="text-2xs font-extrabold uppercase tracking-wider text-rose-800">24x7 Emergency / Casualty Line:</div>
+            <div class="text-lg font-black text-rose-900 mt-0.5" id="modal-emergency-phone">+91 161 2115000</div>
+            <div class="text-2xs text-rose-700">Immediate doctor on-call & ambulance triage</div>
+          </div>
+          <a id="modal-call-emergency-btn" href="tel:+911612115000" class="px-4 py-2.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold shadow-md transition flex items-center gap-1.5 shrink-0">
+            <span>🚨 Call Emergency</span>
+          </a>
+        </div>
+
+        <!-- Department Extension Contacts Grid -->
+        <div>
+          <span class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-3">Direct Department Phone Extensions:</span>
+          
+          <div class="grid sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+              <div>
+                <span class="text-2xs text-slate-400 font-bold block">Reception & OPD Appointments:</span>
+                <span class="font-bold text-slate-900 text-sm" id="modal-reception-phone">+91 161 2115200</span>
+              </div>
+              <a id="modal-call-reception-btn" href="tel:+911612115200" class="p-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs" title="Call Reception">📞</a>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+              <div>
+                <span class="text-2xs text-slate-400 font-bold block">Ambulance Dispatch Service:</span>
+                <span class="font-bold text-slate-900 text-sm" id="modal-ambulance-phone">+91 161 2115108</span>
+              </div>
+              <a id="modal-call-ambulance-btn" href="tel:+911612115108" class="p-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-xs" title="Call Ambulance">🚑</a>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+              <div>
+                <span class="text-2xs text-slate-400 font-bold block">Cashless TPA & Insurance Desk:</span>
+                <span class="font-bold text-slate-900 text-sm" id="modal-tpa-phone">+91 161 2115444</span>
+              </div>
+              <a id="modal-call-tpa-btn" href="tel:+911612115444" class="p-2 bg-medteal hover:bg-medtealDark text-white rounded-lg text-xs" title="Call TPA Desk">🛡️</a>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+              <div>
+                <span class="text-2xs text-slate-400 font-bold block">24x7 Blood Bank Helpline:</span>
+                <span class="font-bold text-slate-900 text-sm" id="modal-bloodbank-phone">+91 161 2115120</span>
+              </div>
+              <a id="modal-call-bloodbank-btn" href="tel:+911612115120" class="p-2 bg-rose-500 hover:bg-rose-600 text-white rounded-lg text-xs" title="Call Blood Bank">🩸</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hospital Information Overview -->
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 text-xs">
+          <div class="grid grid-cols-3 gap-2 text-center">
+            <div class="p-2 bg-white rounded-xl border border-slate-200">
+              <span class="text-2xs text-slate-400 block">Total Beds</span>
+              <span class="font-extrabold text-slate-900 text-sm" id="modal-beds-count">775 Beds</span>
+            </div>
+            <div class="p-2 bg-white rounded-xl border border-slate-200">
+              <span class="text-2xs text-slate-400 block">Rating</span>
+              <span class="font-extrabold text-slate-900 text-sm" id="modal-rating">★ 4.8</span>
+            </div>
+            <div class="p-2 bg-white rounded-xl border border-slate-200">
+              <span class="text-2xs text-slate-400 block">Accreditation</span>
+              <span class="font-extrabold text-slate-900 text-sm" id="modal-accreditation">NABH, NABL</span>
+            </div>
+          </div>
+
+          <div>
+            <span class="font-bold text-slate-700 block mb-1">Key Specialties & Clinical Departments:</span>
+            <div id="modal-specialties-tags" class="flex flex-wrap gap-1.5">
+              <!-- Specialties chips -->
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-slate-200 text-slate-600">
+            <strong>Timings:</strong> <span id="modal-timings">24x7 Casualty & Emergency • OPD: 08:30 AM - 04:30 PM</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-3">
+        <button onclick="copyHospitalContact()" class="px-4 py-2.5 bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 font-bold rounded-xl text-xs transition flex items-center gap-1.5 shadow-xs">
+          <span>📋</span>
+          <span id="copy-btn-text">Copy Contact Number</span>
+        </button>
+        <button onclick="closeContactModal()" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs transition">
+          Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs mt-auto py-8 border-t border-slate-800 text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <div class="font-bold text-slate-300">Punjab Healthcare Verified Hospital Contacts & Emergency Helplines Directory</div>
+      <div class="text-2xs text-slate-500">
+        © 2026 Punjab Healthcare Pvt Ltd • In Partnership with Empaneled Hospitals Across all 24 Punjab Districts
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/punjab_hospital_data.js"></script>
+  <script src="js/ai-checker.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    let currentCategory = 'all';
+    let currentDistrict = 'all';
+    let searchQuery = '';
+    let selectedHospitalForModal = null;
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sync with global store's selectedCity if present
+      const storeCity = store.state.selectedCity;
+      if (storeCity && storeCity !== 'all') {
+        const districtSelect = document.getElementById('hospital-district-filter');
+        if (districtSelect) {
+          districtSelect.value = storeCity;
+          currentDistrict = storeCity;
+        }
+      }
+
+      renderHospitals();
+    });
+
+    function handleSearchInput(val) {
+      searchQuery = (val || '').trim().toLowerCase();
+      renderHospitals();
+    }
+
+    function selectCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = 'cat-pill px-4 py-2 rounded-xl font-bold bg-slate-900 text-white shadow-xs whitespace-nowrap';
+        } else {
+          btn.className = 'cat-pill px-4 py-2 rounded-xl font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap';
+        }
+      });
+      renderHospitals();
+    }
+
+    function filterHospitals() {
+      currentDistrict = document.getElementById('hospital-district-filter').value;
+      renderHospitals();
+    }
+
+    function renderHospitals() {
+      const container = document.getElementById('hospitals-contact-grid');
+      const countEl = document.getElementById('hospitals-count');
+      let list = MEDROUTE_DATA.hospitals || [];
+
+      // Filter by district
+      if (currentDistrict !== 'all') {
+        list = list.filter(h => h.city === currentDistrict);
+      }
+
+      // Filter by category
+      if (currentCategory === 'emergency') {
+        list = list.filter(h => h.emergencyPhone);
+      } else if (currentCategory === 'govt') {
+        list = list.filter(h => (h.category && h.category.toLowerCase().includes('medical college')) || h.name.toLowerCase().includes('medical college') || h.name.toLowerCase().includes('government'));
+      } else if (currentCategory === 'cardiac') {
+        list = list.filter(h => h.specialties.some(s => s.toLowerCase().includes('cardio') || s.toLowerCase().includes('heart')));
+      } else if (currentCategory === 'cancer') {
+        list = list.filter(h => h.specialties.some(s => s.toLowerCase().includes('cancer') || s.toLowerCase().includes('oncology')));
+      } else if (currentCategory === 'ayushman') {
+        list = list.filter(h => h.cashless && (h.tpaPartners.some(t => t.toLowerCase().includes('ayushman')) || h.accreditation.some(a => a.toLowerCase().includes('ayushman'))));
+      }
+
+      // Search keyword
+      if (searchQuery) {
+        list = list.filter(h => 
+          h.name.toLowerCase().includes(searchQuery) ||
+          h.city.toLowerCase().includes(searchQuery) ||
+          h.address.toLowerCase().includes(searchQuery) ||
+          h.emergencyPhone.includes(searchQuery) ||
+          (h.receptionPhone && h.receptionPhone.includes(searchQuery)) ||
+          h.specialties.some(s => s.toLowerCase().includes(searchQuery))
+        );
+      }
+
+      if (countEl) countEl.textContent = list.length;
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-2 py-16 text-center text-slate-400 bg-white rounded-3xl border border-slate-200">
+            <div class="text-4xl mb-2">🏥</div>
+            <p class="font-bold text-slate-700 text-base">No hospital contacts found for the selected filters.</p>
+            <p class="text-xs text-slate-500 mt-1">Try switching to "All Punjab Districts" or clearing your search query.</p>
+            <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-medteal text-white font-bold rounded-xl text-xs hover:bg-medtealDark transition">Reset All Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = list.map(h => `
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition hover-lift flex flex-col justify-between">
+          <div>
+            <!-- Header Info -->
+            <div class="flex items-start gap-4">
+              <img src="${h.image}" alt="${h.name}" class="w-24 h-24 rounded-2xl object-cover border border-slate-100 shrink-0 shadow-xs" />
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-2xs font-extrabold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                    24x7 Helpline Active
+                  </span>
+                  <span class="text-2xs font-bold text-slate-500">★ ${h.rating} (${h.reviewsCount} reviews)</span>
+                </div>
+                <h3 class="text-base font-black text-slate-900 mt-1 leading-snug">${h.name}</h3>
+                <div class="text-xs font-semibold text-medteal mt-0.5">${h.branch} • ${h.network}</div>
+                <p class="text-2xs text-slate-500 mt-1 line-clamp-2">${h.address}</p>
+              </div>
+            </div>
+
+            <!-- Direct Contact Numbers Box -->
+            <div class="mt-5 p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <div class="text-2xs font-extrabold uppercase tracking-wider text-slate-400">Direct Telephone Helplines:</div>
+              
+              <div class="grid sm:grid-cols-2 gap-2 text-xs">
+                <!-- Emergency Line -->
+                <div class="p-2.5 rounded-xl bg-white border border-rose-200 flex items-center justify-between">
+                  <div>
+                    <span class="text-2xs font-bold text-rose-700 block">🚨 Emergency / Casualty:</span>
+                    <span class="font-extrabold text-slate-900">${h.emergencyPhone}</span>
+                  </div>
+                  <a href="tel:${h.emergencyPhone}" class="px-2.5 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-2xs font-bold flex items-center gap-1 shadow-xs" title="Call Emergency">
+                    <span>Call</span>
+                  </a>
+                </div>
+
+                <!-- Reception / OPD Line -->
+                <div class="p-2.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
+                  <div>
+                    <span class="text-2xs font-bold text-slate-500 block">📞 Reception & OPD:</span>
+                    <span class="font-extrabold text-slate-900">${h.receptionPhone || h.emergencyPhone}</span>
+                  </div>
+                  <a href="tel:${h.receptionPhone || h.emergencyPhone}" class="px-2.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-2xs font-bold flex items-center gap-1 shadow-xs" title="Call Reception">
+                    <span>Call</span>
+                  </a>
+                </div>
+
+                <!-- Ambulance Service -->
+                <div class="p-2.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
+                  <div>
+                    <span class="text-2xs font-bold text-slate-500 block">🚑 Ambulance Dispatch:</span>
+                    <span class="font-extrabold text-slate-900">${h.ambulancePhone || '108'}</span>
+                  </div>
+                  <a href="tel:${h.ambulancePhone || '108'}" class="px-2.5 py-1.5 bg-medteal hover:bg-medtealDark text-white rounded-lg text-2xs font-bold flex items-center gap-1 shadow-xs" title="Call Ambulance">
+                    <span>Call</span>
+                  </a>
+                </div>
+
+                <!-- Cashless TPA Desk -->
+                <div class="p-2.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
+                  <div>
+                    <span class="text-2xs font-bold text-slate-500 block">🛡️ Cashless TPA Desk:</span>
+                    <span class="font-extrabold text-slate-900">${h.tpaDeskPhone || h.emergencyPhone}</span>
+                  </div>
+                  <a href="tel:${h.tpaDeskPhone || h.emergencyPhone}" class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-2xs font-bold flex items-center gap-1 shadow-xs" title="Call TPA Desk">
+                    <span>Call</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Specs & Specialties -->
+            <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center gap-2 text-2xs">
+              <span class="font-bold text-slate-600">Accreditations:</span>
+              ${h.accreditation.map(a => `<span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-semibold">${a}</span>`).join('')}
+              <span class="ml-auto font-extrabold text-medteal">${h.beds} Beds</span>
+            </div>
+
+            <div class="mt-2 flex flex-wrap gap-1.5 text-2xs">
+              ${h.specialties.slice(0, 4).map(s => `<span class="px-2 py-0.5 bg-teal-50 text-medteal font-bold rounded-md">✓ ${s}</span>`).join('')}
+              ${h.specialties.length > 4 ? `<span class="text-slate-400 font-semibold self-center">+${h.specialties.length - 4} more</span>` : ''}
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="pt-5 border-t border-slate-100 mt-5 flex items-center justify-between gap-3">
+            <a href="tel:${h.emergencyPhone}" class="px-4 py-2.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold shadow-sm transition flex items-center gap-1.5">
+              <span>🚨 Dial Emergency</span>
+            </a>
+            <button onclick="openContactModal('${h.id}')" class="px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center gap-1.5">
+              <span>📋 View All Extensions</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function resetFilters() {
+      currentDistrict = 'all';
+      currentCategory = 'all';
+      searchQuery = '';
+      document.getElementById('hospital-district-filter').value = 'all';
+      document.getElementById('hospital-keyword-input').value = '';
+      selectCategory('all');
+    }
+
+    function openContactModal(hospId) {
+      const hosp = MEDROUTE_DATA.hospitals.find(h => h.id === hospId);
+      if (!hosp) return;
+      selectedHospitalForModal = hosp;
+
+      document.getElementById('modal-hospital-name').textContent = hosp.name;
+      document.getElementById('modal-hospital-address').textContent = `${hosp.branch}, ${hosp.address}`;
+      
+      document.getElementById('modal-emergency-phone').textContent = hosp.emergencyPhone;
+      document.getElementById('modal-call-emergency-btn').href = `tel:${hosp.emergencyPhone}`;
+      
+      document.getElementById('modal-reception-phone').textContent = hosp.receptionPhone || hosp.emergencyPhone;
+      document.getElementById('modal-call-reception-btn').href = `tel:${hosp.receptionPhone || hosp.emergencyPhone}`;
+
+      document.getElementById('modal-ambulance-phone').textContent = hosp.ambulancePhone || '108';
+      document.getElementById('modal-call-ambulance-btn').href = `tel:${hosp.ambulancePhone || '108'}`;
+
+      document.getElementById('modal-tpa-phone').textContent = hosp.tpaDeskPhone || hosp.emergencyPhone;
+      document.getElementById('modal-call-tpa-btn').href = `tel:${hosp.tpaDeskPhone || hosp.emergencyPhone}`;
+
+      document.getElementById('modal-bloodbank-phone').textContent = hosp.bloodBankPhone || hosp.emergencyPhone;
+      document.getElementById('modal-call-bloodbank-btn').href = `tel:${hosp.bloodBankPhone || hosp.emergencyPhone}`;
+
+      document.getElementById('modal-beds-count').textContent = `${hosp.beds} Beds`;
+      document.getElementById('modal-rating').textContent = `★ ${hosp.rating} (${hosp.reviewsCount})`;
+      document.getElementById('modal-accreditation').textContent = hosp.accreditation.join(', ');
+
+      document.getElementById('modal-timings').textContent = hosp.opdTimings || '24x7 Casualty • OPD 08:30 AM - 05:00 PM';
+
+      const specTags = document.getElementById('modal-specialties-tags');
+      specTags.innerHTML = hosp.specialties.map(s => `
+        <span class="px-2.5 py-1 bg-teal-50 text-medteal font-bold rounded-lg">${s}</span>
+      `).join('');
+
+      document.getElementById('copy-btn-text').textContent = 'Copy Emergency Number';
+      document.getElementById('hospital-contact-modal').classList.remove('hidden');
+    }
+
+    function closeContactModal() {
+      document.getElementById('hospital-contact-modal').classList.add('hidden');
+    }
+
+    function copyHospitalContact() {
+      if (!selectedHospitalForModal) return;
+      navigator.clipboard.writeText(selectedHospitalForModal.emergencyPhone).then(() => {
+        const btnText = document.getElementById('copy-btn-text');
+        btnText.textContent = '✓ Copied!';
+        store.showToast(`Copied ${selectedHospitalForModal.emergencyPhone} to clipboard`, 'success');
+        setTimeout(() => {
+          btnText.textContent = 'Copy Emergency Number';
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* Medroute Healthcare Super-App Custom Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-primary: #1b3b6f;
+  --color-primary-dark: #0f2444;
+  --color-accent: #00A389;
+  --color-accent-light: #e6f7f4;
+  --color-blue: #0070cd;
+  --color-gold: #f59e0b;
+  --color-gold-bg: #fffbeb;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 163, 137, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 163, 137, 0.8);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Card hover transitions */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -10px rgba(15, 36, 68, 0.15);
+}
+
+/* Gold Gradient Card */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%);
+  border: 1px solid #fcd34d;
+}
+
+.gold-badge {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff;
+}
+
+/* Hero Badge */
+.hero-badge {
+  background: rgba(0, 163, 137, 0.1);
+  color: #007d69;
+  border: 1px solid rgba(0, 163, 137, 0.25);
+}
+
+/* Modal and Drawer backdrops */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+/* Print styles for digital lab reports */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-report, #printable-report * {
+    visibility: visible;
+  }
+  #printable-report {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
